@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "633014664958",
+    "firebase_url": "https://ruautomation-918ed.firebaseio.com",
+    "project_id": "ruautomation-918ed",
+    "storage_bucket": "ruautomation-918ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633014664958:android:904cc4a947de8859",
+        "android_client_info": {
+          "package_name": "com.example.cczec.ruautomation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633014664958-7t06bql9rlnvdsq4jcnqtek9derkf6ka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cczec.ruautomation",
+            "certificate_hash": "ff858c3cdd71a50079c5db71a53eac78dd835a44"
+          }
+        },
+        {
+          "client_id": "633014664958-2jut4tomat7s277e1h52aecgh22fvv7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOfV6XBGxxCWXyb1Izvdn4TZpa7RtqMsE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633014664958-2jut4tomat7s277e1h52aecgh22fvv7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
