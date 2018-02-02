@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">RUAutomation</string>
+
+    <string name="coffee_price">$1.99</string>
+
+    <string name="pancake_price">$3.50</string>
+
+    <string name="apple_price">$0.99</string>
+
+    <string name="ice_coffee_price">$2.50</string>
+
+    <string name="soda_price">$0.99</string>
+
+    <string name="sub_price">$4.99</string>
+
+    <string name="hot_dog_price">$2.50</string>
+
+    <string name="burger_price">$3.00</string>
+
+    <string name="beer_price">$2.50</string>
+
+    <string name="steak_price">$16.00</string>
+
+    <string name="turkey_price">$14.00</string>
+
+    <string name="ice_cream_price">$2.00</string>
+
+    <string name="order">Order</string>
+
+    <string name="total_price">Total Price: </string>
+
+    <string name="total_price_price">$0.00</string>
 </resources>
