@@ -35,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     public double turkey_price=14.00;
     public double ice_cream_price=2.00;
 
+    public int coffee_Count,pancake_Count,apple_Count,
+            ice_Coffee_Count,soda_Count,sub_Count,
+            hot_Dog_Count,burger_Count,beer_Count,
+            steak_Count, turkey_Count,ice_Cream_Count;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                total_price = total_price + coffee_price;
                DecimalFormat df = new DecimalFormat("0.00");
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+               coffee_Count++;
             }
         });
 
@@ -80,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                total_price = total_price + pancake_price;
                DecimalFormat df = new DecimalFormat("0.00");
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+               pancake_Count++;
             }
         });
 
@@ -89,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + apple_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                apple_Count++;
             }
         });
 
@@ -98,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + ice_coffee_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                ice_Coffee_Count++;
             }
         });
         //##########################################################################################
@@ -109,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + soda_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                soda_Count++;
             }
         });
 
@@ -118,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + sub_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                sub_Count++;
             }
         });
 
@@ -127,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + hot_dog_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                hot_Dog_Count++;
             }
         });
 
@@ -136,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + burger_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                burger_Count++;
             }
         });
         //##########################################################################################
@@ -147,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + beer_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                beer_Count++;
             }
         });
 
@@ -156,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + steak_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                steak_Count++;
             }
         });
 
@@ -165,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + turkey_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                turkey_Count++;
             }
         });
 
@@ -174,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 total_price = total_price + ice_cream_price;
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                ice_Cream_Count++;
             }
         });
         //##########################################################################################
@@ -181,11 +198,60 @@ public class MainActivity extends AppCompatActivity {
         //##########################################################################################
         orderButton.setOnClickListener(new View.OnClickListener() {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference orderRef = database.getReference("OrderNumber");
+            DatabaseReference orderNumberRef= database.getReference("OrderNumber");
             @Override
             public void onClick(View view) {
                 DecimalFormat df = new DecimalFormat("0.00");
-                orderRef.child("number").child(Integer.toString(order_number)).setValue("Total Price: " + df.format(total_price));
+                orderNumberRef.child(Integer.toString(order_number)).setValue(" ");
+                orderNumberRef.child(Integer.toString(order_number)).push().setValue("Total:" + df.format(total_price));
+                if (coffee_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Coffee: " + coffee_Count);
+                    coffee_Count = 0;
+                }
+                if (pancake_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Pancakes: " + pancake_Count);
+                    pancake_Count = 0;
+                }
+                if (apple_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Apple: " + apple_Count);
+                    apple_Count = 0;
+                }
+                if (ice_Coffee_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Ice Coffee: " + ice_Coffee_Count);
+                    ice_Coffee_Count = 0;
+                }
+                if (soda_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Soda: " + soda_Count);
+                    soda_Count = 0;
+                }
+                if (sub_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Sub: " + sub_Count);
+                    sub_Count = 0;
+                }
+                if (hot_Dog_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Hot Dog: " + hot_Dog_Count);
+                    hot_Dog_Count = 0;
+                }
+                if (burger_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Burger: " + burger_Count);
+                    burger_Count = 0;
+                }
+                if (beer_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Beer: " + beer_Count);
+                    beer_Count = 0;
+                }
+                if (steak_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Steak: " + steak_Count);
+                    steak_Count = 0;
+                }
+                if (turkey_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Turkey: " + turkey_Count);
+                    turkey_Count = 0;
+                }
+                if (ice_Cream_Count >= 1){
+                    orderNumberRef.child(Integer.toString(order_number)).push().setValue("Ice Cream: " + ice_Cream_Count);
+                    ice_Cream_Count = 0;
+                }
                 order_number = order_number + 1;
                 total_price = 0;
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
