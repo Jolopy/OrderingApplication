@@ -3,9 +3,9 @@
     package="com.example.cczec.ruautomation">
 
     <supports-screens
-        android:smallScreens="true"
+        android:smallScreens= "true"
         android:normalScreens="true"
-        android:largeScreens="true"
+        android:largeScreens= "true"
         android:xlargeScreens="true"/>
 
     <application
@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".HostessActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

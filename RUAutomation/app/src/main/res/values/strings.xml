@@ -32,4 +32,6 @@
     <string name="total_price_price">$0.00</string>
 
     <string name="your_order">Your Order</string>
+
+    <string name="tables">Tables</string>
 </resources>
