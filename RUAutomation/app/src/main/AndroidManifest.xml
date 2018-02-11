@@ -34,6 +34,14 @@
             android:name=".ChefActivity"
             android:label="ChefActivity">
         </activity>
+        <activity
+            android:name=".ServerActivity"
+            android:label="ServerActivity">
+        </activity>
+        <activity
+            android:name=".BusboyActivity"
+            android:label="BusboyActivity">
+        </activity>
     </application>
 
 </manifest>

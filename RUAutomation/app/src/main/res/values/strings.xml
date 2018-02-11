@@ -34,7 +34,24 @@
     <string name="your_order">Your Order</string>
 
     <string name="tables">Tables</string>
-    // Home Screen Buttons
-    <string name="Chef">Chef</string>
+
     <string name="Menu">Menu</string>
+
+    // Home Screen Buttons
+    <string name="Employee">Employee</string>
+    <string name="Customer">Customer</string>
+    <string name="Career">Career</string>
+
+    // Employee Home Screen
+    <string name="Chef">Chef</string>
+    <string name="Server">Server</string>
+    <string name="Manager">Manager</string>
+    <string name="Hostess">Hostess</string>
+    <string name="Busboy">Busboy</string>
+
+    // Customer Home Screen
+
+    // Career Home Screen
+
+
 </resources>

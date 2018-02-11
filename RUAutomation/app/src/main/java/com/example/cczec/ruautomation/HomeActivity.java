@@ -29,7 +29,11 @@ public class HomeActivity extends AppCompatActivity {
 
         Button menuButton = findViewById(R.id.buttonMenu);
         Button chefButton = findViewById(R.id.buttonChef);
-
+        /*
+        * Button employeeHome = findViewById(R.id.buttonEmployeeHome);
+        * Button customerHome = findViewById(R.id.buttonCustomerHome);
+        * Button careerHome   = findViewById(R.id.buttonCareerHome);
+        */
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +47,26 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, ChefActivity.class));
             }
         });
-
-
+        /*
+        employeeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, EmployeeActivity.class));
+            }
+        });
+        customerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, CustomerActivity.class));
+            }
+        });
+        careerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, CareerActivity.class));
+            }
+        });
+        */
 
 
     }
