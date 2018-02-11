@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         Button menuButton = findViewById(R.id.buttonMenu);
-
+        Button chefButton = findViewById(R.id.buttonChef);
 
 
         menuButton.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +37,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, MainActivity.class));
             }
         });
+        chefButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ChefActivity.class));
+            }
+        });
+
 
 
 

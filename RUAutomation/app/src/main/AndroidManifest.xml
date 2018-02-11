@@ -30,6 +30,10 @@
             android:name=".HostessActivity"
             android:label="HostessActivity">
         </activity>
+        <activity
+            android:name=".ChefActivity"
+            android:label="ChefActivity">
+        </activity>
     </application>
 
 </manifest>
