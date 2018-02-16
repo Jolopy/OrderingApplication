@@ -35,9 +35,11 @@
 
     <string name="tables">Tables</string>
 
-    <string name="Menu">Menu</string>
+
+    <string name="actual_order"> </string>
 
     // Home Screen Buttons
+    <string name="Menu">Menu</string>
     <string name="Employee">Employee</string>
     <string name="Customer">Customer</string>
     <string name="Career">Career</string>

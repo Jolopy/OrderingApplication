@@ -14,6 +14,23 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
     private TextView textViewPrice;
+    private TextView orderReview1;
+    private TextView orderReview2;
+    private TextView orderReview3;
+    private TextView orderReview4;
+    private TextView orderReview5;
+    private TextView orderReview6;
+    private TextView orderReview7;
+    private TextView orderReview8;
+    private TextView orderReview9;
+    private TextView orderReview10;
+    private TextView orderReview11;
+    private TextView orderReview12;
+
+    public String strCoffee = "Coffee: ",strPancakes = "Pancakes: ",strApple = "Apple: ",
+            strIceCoffee = "Ice Coffee: ",strSoda = "Soda: ",strSub = "Sub: ",strHotDog = "Hot Dog:",
+            strBurger = "Burger: ",strBeer = "Beer: ",strSteak = "Steak: ",strTurkey = "Turkey: ",
+            strIceCream = "Ice Cream: ";
 
     //Constants
     public double total_price = 0;
@@ -63,6 +80,19 @@ public class MainActivity extends AppCompatActivity {
 
         Button orderButton = findViewById(R.id.orderButton);
         textViewPrice = findViewById(R.id.textViewPrice);
+        orderReview1 =findViewById(R.id.orderReview1);
+        orderReview2 =findViewById(R.id.orderReview2);
+        orderReview3 =findViewById(R.id.orderReview3);
+        orderReview4 =findViewById(R.id.orderReview4);
+        orderReview5 =findViewById(R.id.orderReview5);
+        orderReview6 =findViewById(R.id.orderReview6);
+        orderReview7 =findViewById(R.id.orderReview7);
+        orderReview8 =findViewById(R.id.orderReview8);
+        orderReview9 =findViewById(R.id.orderReview9);
+        orderReview10 =findViewById(R.id.orderReview10);
+        orderReview11 =findViewById(R.id.orderReview11);
+        orderReview12 =findViewById(R.id.orderReview12);
+
 
 
         //##########################################################################################
@@ -75,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                DecimalFormat df = new DecimalFormat("0.00");
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                coffee_Count++;
+               orderReview1.setText(strCoffee + Integer.toString(coffee_Count));
             }
         });
 
@@ -85,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                DecimalFormat df = new DecimalFormat("0.00");
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                pancake_Count++;
+               orderReview2.setText(strPancakes +  Integer.toString(pancake_Count));
             }
         });
 
@@ -95,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 apple_Count++;
+                orderReview3.setText(strApple + Integer.toString(apple_Count));
             }
         });
 
@@ -105,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 ice_Coffee_Count++;
+                orderReview4.setText(strIceCoffee + Integer.toString(ice_Coffee_Count));
             }
         });
         //##########################################################################################
@@ -117,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 soda_Count++;
+                orderReview5.setText(strSoda + Integer.toString(soda_Count));
             }
         });
 
@@ -127,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 sub_Count++;
+                orderReview6.setText(strSub + Integer.toString(sub_Count));
             }
         });
 
@@ -137,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 hot_Dog_Count++;
+                orderReview7.setText(strHotDog + Integer.toString(hot_Dog_Count));
             }
         });
 
@@ -147,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 burger_Count++;
+                orderReview8.setText(strBurger + Integer.toString(burger_Count));
             }
         });
         //##########################################################################################
@@ -159,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 beer_Count++;
+                orderReview9.setText(strBeer + Integer.toString(beer_Count));
             }
         });
 
@@ -169,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 steak_Count++;
+                orderReview10.setText(strSteak + Integer.toString(steak_Count));
             }
         });
 
@@ -179,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 turkey_Count++;
+                orderReview11.setText(strTurkey + Integer.toString(turkey_Count));
             }
         });
 
@@ -189,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 ice_Cream_Count++;
+                orderReview12.setText(strIceCream + Integer.toString(ice_Cream_Count));
             }
         });
         //##########################################################################################
@@ -254,6 +296,18 @@ public class MainActivity extends AppCompatActivity {
                 total_price = 0;
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
 
+                orderReview1.setText("");
+                orderReview2.setText("");
+                orderReview3.setText("");
+                orderReview4.setText("");
+                orderReview5.setText("");
+                orderReview6.setText("");
+                orderReview7.setText("");
+                orderReview8.setText("");
+                orderReview9.setText("");
+                orderReview10.setText("");
+                orderReview11.setText("");
+                orderReview12.setText("");
             }
         });
 

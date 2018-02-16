@@ -146,5 +146,127 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@android:color/black" />
 
+    <TextView
+        android:id="@+id/orderReview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/orderReview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview1"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview2"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview3"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview4"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview5"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview6"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview7"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview8"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview9"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview10"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/orderReview12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderReview11"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:text="@string/actual_order"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="26sp" />
+
 
 </RelativeLayout>
