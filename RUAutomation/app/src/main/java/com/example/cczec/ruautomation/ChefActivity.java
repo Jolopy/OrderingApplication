@@ -33,6 +33,7 @@ public String getOrderString = "0";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef);
 
+        /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference refChef = database.getReference("TableNumber");
         Button getOrder = findViewById(R.id.getOrder);
@@ -59,6 +60,7 @@ public String getOrderString = "0";
                 });
             }
         });
+        */
 
 
 
