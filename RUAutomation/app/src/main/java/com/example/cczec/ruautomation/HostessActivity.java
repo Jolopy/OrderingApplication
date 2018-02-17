@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.text.DecimalFormat;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 
@@ -24,6 +27,55 @@ public class HostessActivity extends AppCompatActivity {
     public int table1,table2,table3,table4,table5,table6,table7,
             table8,table9,table10,table11,table12,table13,table14,
             table15,table16,table17,table18,table19,table20 = 0;
+
+    Timer tableTimer = new Timer();
+
+    public long table1SeatedTime1 = 0;
+    public long table1SeatedTime2 = 0;
+    public long table1SeatedTime3 = 0;
+    public long table1SeatedTime4 = 0;
+    public long table1SeatedTime5 = 0;
+    public long table1SeatedTime6 = 0;
+    public long table1SeatedTime7 = 0;
+    public long table1SeatedTime8 = 0;
+    public long table1SeatedTime9 = 0;
+    public long table1SeatedTime10 = 0;
+    public long table1SeatedTime11 = 0;
+    public long table1SeatedTime12 = 0;
+    public long table1SeatedTime13 = 0;
+    public long table1SeatedTime14 = 0;
+    public long table1SeatedTime15 = 0;
+    public long table1SeatedTime16 = 0;
+    public long table1SeatedTime17 = 0;
+    public long table1SeatedTime18 = 0;
+    public long table1SeatedTime19 = 0;
+    public long table1SeatedTime20 = 0;
+
+
+    public int seated1 = 0;
+    public int seated2 = 0;
+    public int seated3 = 0;
+    public int seated4 = 0;
+    public int seated5 = 0;
+    public int seated6 = 0;
+    public int seated7 = 0;
+    public int seated8 = 0;
+    public int seated9 = 0;
+    public int seated10 = 0;
+    public int seated11 = 0;
+    public int seated12 = 0;
+    public int seated13 = 0;
+    public int seated14 = 0;
+    public int seated15 = 0;
+    public int seated16 = 0;
+    public int seated17 = 0;
+    public int seated18 = 0;
+    public int seated19 = 0;
+    public int seated20 = 0;
+
+    public long tableAvgTime = 0;
+    public long tableAvgCount = 0;
+    public long tableTotalAvg = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +106,71 @@ public class HostessActivity extends AppCompatActivity {
         final ImageButton tableNumber19 = findViewById(R.id.tableNumber19);
         final ImageButton tableNumber20 = findViewById(R.id.tableNumber20);
 
+        final TextView timer1 = findViewById(R.id.Timer1);
+        final TextView timer2 = findViewById(R.id.Timer2);
+        final TextView timer3 = findViewById(R.id.Timer3);
+        final TextView timer4 = findViewById(R.id.Timer4);
+        final TextView timer5 = findViewById(R.id.Timer5);
+        final TextView timer6 = findViewById(R.id.Timer6);
+        final TextView timer7 = findViewById(R.id.Timer7);
+        final TextView timer8 = findViewById(R.id.Timer8);
+        final TextView timer9 = findViewById(R.id.Timer9);
+        final TextView timer10 = findViewById(R.id.Timer10);
+        final TextView timer11 = findViewById(R.id.Timer11);
+        final TextView timer12 = findViewById(R.id.Timer12);
+        final TextView timer13 = findViewById(R.id.Timer13);
+        final TextView timer14 = findViewById(R.id.Timer14);
+        final TextView timer15 = findViewById(R.id.Timer15);
+        final TextView timer16 = findViewById(R.id.Timer16);
+        final TextView timer17 = findViewById(R.id.Timer17);
+        final TextView timer18 = findViewById(R.id.Timer18);
+        final TextView timer19 = findViewById(R.id.Timer19);
+        final TextView timer20 = findViewById(R.id.Timer20);
+
+        final TextView avgWaitTime = findViewById(R.id.avgWaitTime);
+
+
+
+        Timer tableTimer = new Timer();
+        tableTimer.scheduleAtFixedRate(new TimerTask() {
+                                             @Override
+                                             public void run() {
+                                                 //Called at every 1000 milliseconds (1 second)
+                                                 if(seated1 == 1) {
+                                                     Log.i("Table Time 1: ", "Minute Added");
+                                                     table1SeatedTime1 = table1SeatedTime1 + 1;
+                                                     timer1.setText("Table 1 Time: " + table1SeatedTime1);
+                                                 }
+                                                 if(seated2 == 1) {
+                                                     Log.i("Table Time 2: ", "Minute Added");
+                                                     table1SeatedTime2 = table1SeatedTime2 + 1;
+                                                     timer2.setText("Table 2 Time: " + table1SeatedTime2);
+                                                 }
+                                                 if(seated3 == 1) {
+                                                     Log.i("Table Time 3: ", "Minute Added");
+                                                     table1SeatedTime3 = table1SeatedTime3 + 1;
+                                                     timer3.setText("Table 3 Time: " + table1SeatedTime3);
+                                                 }
+                                                 if(seated4 == 1) {
+                                                     Log.i("Table Time 4: ", "Minute Added");
+                                                     table1SeatedTime4 = table1SeatedTime4 + 1;
+                                                     timer4.setText("Table 4 Time: " + table1SeatedTime4);
+                                                 }
+                                                 if(seated5 == 1) {
+                                                     Log.i("Table Time 5: ", "Minute Added");
+                                                     table1SeatedTime5 = table1SeatedTime5 + 1;
+                                                     timer5.setText("Table 5 Time: " + table1SeatedTime5);
+                                                 }
+                                             }
+                                       },
+                //set the amount of time in milliseconds before first execution
+                0,
+                //Set the amount of time between each execution (in milliseconds)
+                600);
+
+
+
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////
         //////////////// TABLE 1
@@ -66,18 +183,34 @@ public class HostessActivity extends AppCompatActivity {
                     tableNumber1.setBackgroundResource(R.drawable.empty);
                     tableRef.child("1").setValue("Empty");
                     table1 = 0;
+                    //TIMER
+                    timer1.setText("Table 1 Open");
+                    //TIMER
                 }
                 else if(table1 == 1)
                 {
                     tableNumber1.setBackgroundResource(R.drawable.cleaning);
                     tableRef.child("1").setValue("Cleaning");
                     table1++;
+
+                    //TIMER
+                    timer1.setText("Table 1 Cleaning");
+                    tableAvgTime = tableAvgTime + table1SeatedTime1;
+                    tableAvgCount = tableAvgCount + 1;
+                    tableTotalAvg = tableAvgTime/tableAvgCount;
+                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    seated1 = 0;
+                    table1SeatedTime1 = 0;
+                    //TIMER
                 }
                 else if(table1 == 0)
                 {
                     tableNumber1.setBackgroundResource(R.drawable.taken);
                     tableRef.child("1").setValue("Taken");
                     table1++;
+                    //TIMER
+                    seated1 = 1;
+                    //TIMER
                 }
                 else{
                     tableNumber1.setBackgroundResource(R.drawable.empty);
@@ -97,18 +230,36 @@ public class HostessActivity extends AppCompatActivity {
                     tableNumber2.setBackgroundResource(R.drawable.empty);
                     tableRef.child("2").setValue("Empty");
                     table2 = 0;
+                    //TIMER
+                    timer2.setText("Table 2 Open");
+                    //TIMER
+
                 }
                 else if(table2 == 1)
                 {
                     tableNumber2.setBackgroundResource(R.drawable.cleaning);
                     tableRef.child("2").setValue("Cleaning");
                     table2++;
+                    //TIMER
+                    timer2.setText("Table 2 Cleaning");
+                    tableAvgTime = tableAvgTime + table1SeatedTime2;
+                    tableAvgCount = tableAvgCount + 1;
+                    tableTotalAvg = tableAvgTime/tableAvgCount;
+                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    seated2 = 0;
+                    table1SeatedTime2 = 0;
+                    //TIMER
+
                 }
                 else if(table2 == 0)
                 {
                     tableNumber2.setBackgroundResource(R.drawable.taken);
                     tableRef.child("2").setValue("Taken");
                     table2++;
+                    //TIMER
+                    seated2 = 1;
+                    //TIMER
+
                 }
                 else{
                     tableNumber2.setBackgroundResource(R.drawable.empty);
@@ -128,18 +279,36 @@ public class HostessActivity extends AppCompatActivity {
                     tableNumber3.setBackgroundResource(R.drawable.empty);
                     tableRef.child("3").setValue("Empty");
                     table3 = 0;
+                    //TIMER
+                    timer3.setText("Table 3 Open");
+                    //TIMER
+
                 }
                 else if(table3 == 1)
                 {
                     tableNumber3.setBackgroundResource(R.drawable.cleaning);
                     tableRef.child("3").setValue("Cleaning");
                     table3++;
+                    //TIMER
+                    timer3.setText("Table 3 Cleaning");
+                    tableAvgTime = tableAvgTime + table1SeatedTime3;
+                    tableAvgCount = tableAvgCount + 1;
+                    tableTotalAvg = tableAvgTime/tableAvgCount;
+                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    seated3 = 0;
+                    table1SeatedTime3 = 0;
+                    //TIMER
+
                 }
                 else if(table3 == 0)
                 {
                     tableNumber3.setBackgroundResource(R.drawable.taken);
                     tableRef.child("3").setValue("Taken");
                     table3++;
+                    //TIMER
+                    seated3 = 1;
+                    //TIMER
+
                 }
                 else{
                     tableNumber3.setBackgroundResource(R.drawable.empty);
@@ -159,18 +328,36 @@ public class HostessActivity extends AppCompatActivity {
                     tableNumber4.setBackgroundResource(R.drawable.empty);
                     tableRef.child("4").setValue("Empty");
                     table4 = 0;
+                    //TIMER
+                    timer4.setText("Table 4 Open");
+                    //TIMER
+
                 }
                 else if(table4 == 1)
                 {
                     tableNumber4.setBackgroundResource(R.drawable.cleaning);
                     tableRef.child("4").setValue("Cleaning");
                     table4++;
+                    //TIMER
+                    timer4.setText("Table 4 Cleaning");
+                    tableAvgTime = tableAvgTime + table1SeatedTime4;
+                    tableAvgCount = tableAvgCount + 1;
+                    tableTotalAvg = tableAvgTime/tableAvgCount;
+                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    seated4 = 0;
+                    table1SeatedTime4 = 0;
+                    //TIMER
+
                 }
                 else if(table4 == 0)
                 {
                     tableNumber4.setBackgroundResource(R.drawable.taken);
                     tableRef.child("4").setValue("Taken");
                     table4++;
+                    //TIMER
+                    seated4 = 1;
+                    //TIMER
+
                 }
                 else{
                     tableNumber4.setBackgroundResource(R.drawable.empty);
@@ -190,18 +377,35 @@ public class HostessActivity extends AppCompatActivity {
                     tableNumber5.setBackgroundResource(R.drawable.empty);
                     tableRef.child("5").setValue("Empty");
                     table5 = 0;
+                    //TIMER
+                    timer5.setText("Table 5 Open");
+                    //TIMER
+
                 }
                 else if(table5 == 1)
                 {
                     tableNumber5.setBackgroundResource(R.drawable.cleaning);
                     tableRef.child("5").setValue("Cleaning");
                     table5++;
+                    //TIMER
+                    timer5.setText("Table 5 Cleaning");
+                    tableAvgTime = tableAvgTime + table1SeatedTime5;
+                    tableAvgCount = tableAvgCount + 1;
+                    tableTotalAvg = tableAvgTime/tableAvgCount;
+                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    seated5 = 0;
+                    table1SeatedTime5 = 0;
+                    //TIMER
+
                 }
                 else if(table5 == 0)
                 {
                     tableNumber5.setBackgroundResource(R.drawable.taken);
                     tableRef.child("5").setValue("Taken");
                     table5++;
+                    //TIMER
+                    seated5 = 1;
+                    //TIMER
                 }
                 else{
                     tableNumber5.setBackgroundResource(R.drawable.empty);

@@ -1,133 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:columnCount="5"
-    android:rowCount="4"
+    android:id="@+id/behindChessBoard"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="5dp">
+    android:layout_height="match_parent" >
 
-    <ImageButton
-        android:id="@+id/tableNumber1"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables" />
-    <ImageButton
-        android:id="@+id/tableNumber2"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber3"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber4"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber5"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
 
-    <ImageButton
-        android:id="@+id/tableNumber6"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber7"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber8"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber9"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber10"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber11"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber12"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber13"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber14"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber15"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber16"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber17"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber18"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables" />
-    <ImageButton
-        android:id="@+id/tableNumber19"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-    <ImageButton
-        android:id="@+id/tableNumber20"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/empty"
-        android:contentDescription="@string/tables"/>
-</GridLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/right_side"
+        android:layout_width="800dp"
+        android:layout_height="match_parent" >
+
+        <GridLayout
+            android:columnCount="5"
+            android:rowCount="4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/tableNumber1"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables" />
+            <ImageButton
+                android:id="@+id/tableNumber2"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber3"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber4"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber5"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+
+            <ImageButton
+                android:id="@+id/tableNumber6"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber7"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber8"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber9"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber10"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber11"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber12"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber13"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber14"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber15"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber16"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber17"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber18"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables" />
+            <ImageButton
+                android:id="@+id/tableNumber19"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+            <ImageButton
+                android:id="@+id/tableNumber20"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/empty"
+                android:contentDescription="@string/tables"/>
+        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/avgWaitTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avg Table Wait Times: "
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Timer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/Timer20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
