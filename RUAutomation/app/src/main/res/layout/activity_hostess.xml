@@ -167,121 +167,121 @@
             android:id="@+id/Timer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 2 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 3 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 4 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 5 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 6 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 7 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 8 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 9 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 10 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 11 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 1 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 12 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 13 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 14 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 15 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 16 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 17 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 18 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 19 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <TextView
             android:id="@+id/Timer20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait time:"
+            android:text="Table 20 Open"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     </LinearLayout>
