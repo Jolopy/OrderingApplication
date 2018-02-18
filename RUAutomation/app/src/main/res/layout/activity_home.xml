@@ -15,17 +15,25 @@
         android:id="@+id/HostessHome"
         android:layout_width="500dp"
         android:layout_height="166dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_toEndOf="@+id/buttonMenu"
         android:text="@string/Hostess" />
+
+    <Button
+        android:id="@+id/BusboyHome"
+        android:layout_width="500dp"
+        android:layout_height="166dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/HostessHome"
+        android:layout_marginTop="15dp"
+        android:text="@string/Busboy" />
 
     <Button
         android:id="@+id/buttonCustomerHome"
         android:layout_width="match_parent"
-        android:layout_height="166dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/buttonCareerHome"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/buttonMenu"
         android:text="@string/Menu" />
 
     <Button

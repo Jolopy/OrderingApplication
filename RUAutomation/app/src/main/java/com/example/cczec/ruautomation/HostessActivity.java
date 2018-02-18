@@ -24,58 +24,58 @@ import java.util.TimerTask;
 
 public class HostessActivity extends AppCompatActivity {
 
-    public int table1,table2,table3,table4,table5,table6,table7,
+    private int table1,table2,table3,table4,table5,table6,table7,
             table8,table9,table10,table11,table12,table13,table14,
             table15,table16,table17,table18,table19,table20 = 0;
 
     Timer tableTimer = new Timer();
 
-    public long table1SeatedTime1 = 0;
-    public long table1SeatedTime2 = 0;
-    public long table1SeatedTime3 = 0;
-    public long table1SeatedTime4 = 0;
-    public long table1SeatedTime5 = 0;
-    public long table1SeatedTime6 = 0;
-    public long table1SeatedTime7 = 0;
-    public long table1SeatedTime8 = 0;
-    public long table1SeatedTime9 = 0;
-    public long table1SeatedTime10 = 0;
-    public long table1SeatedTime11 = 0;
-    public long table1SeatedTime12 = 0;
-    public long table1SeatedTime13 = 0;
-    public long table1SeatedTime14 = 0;
-    public long table1SeatedTime15 = 0;
-    public long table1SeatedTime16 = 0;
-    public long table1SeatedTime17 = 0;
-    public long table1SeatedTime18 = 0;
-    public long table1SeatedTime19 = 0;
-    public long table1SeatedTime20 = 0;
+    private int table1SeatedTime1 = 0;
+    private int table1SeatedTime2 = 0;
+    private int table1SeatedTime3 = 0;
+    private int table1SeatedTime4 = 0;
+    private int table1SeatedTime5 = 0;
+    private int table1SeatedTime6 = 0;
+    private int table1SeatedTime7 = 0;
+    private int table1SeatedTime8 = 0;
+    private int table1SeatedTime9 = 0;
+    private int table1SeatedTime10 = 0;
+    private int table1SeatedTime11 = 0;
+    private int table1SeatedTime12 = 0;
+    private int table1SeatedTime13 = 0;
+    private int table1SeatedTime14 = 0;
+    private int table1SeatedTime15 = 0;
+    private int table1SeatedTime16 = 0;
+    private int table1SeatedTime17 = 0;
+    private int table1SeatedTime18 = 0;
+    private int table1SeatedTime19 = 0;
+    private int table1SeatedTime20 = 0;
 
 
-    public int seated1 = 0;
-    public int seated2 = 0;
-    public int seated3 = 0;
-    public int seated4 = 0;
-    public int seated5 = 0;
-    public int seated6 = 0;
-    public int seated7 = 0;
-    public int seated8 = 0;
-    public int seated9 = 0;
-    public int seated10 = 0;
-    public int seated11 = 0;
-    public int seated12 = 0;
-    public int seated13 = 0;
-    public int seated14 = 0;
-    public int seated15 = 0;
-    public int seated16 = 0;
-    public int seated17 = 0;
-    public int seated18 = 0;
-    public int seated19 = 0;
-    public int seated20 = 0;
+    private int seated1 = 0;
+    private int seated2 = 0;
+    private int seated3 = 0;
+    private int seated4 = 0;
+    private int seated5 = 0;
+    private int seated6 = 0;
+    private int seated7 = 0;
+    private int seated8 = 0;
+    private int seated9 = 0;
+    private int seated10 = 0;
+    private int seated11 = 0;
+    private int seated12 = 0;
+    private int seated13 = 0;
+    private int seated14 = 0;
+    private int seated15 = 0;
+    private int seated16 = 0;
+    private int seated17 = 0;
+    private int seated18 = 0;
+    private int seated19 = 0;
+    private int seated20 = 0;
 
-    public long tableAvgTime = 0;
-    public long tableAvgCount = 0;
-    public long tableTotalAvg = 0;
+    private int tableAvgTime = 0;
+    private int tableAvgCount = 0;
+    private int tableTotalAvg = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -243,7 +243,7 @@ public class HostessActivity extends AppCompatActivity {
                 //set the amount of time in milliseconds before first execution
                 0,
                 //Set the amount of time between each execution (in milliseconds)
-                600);
+                6000);
 
 
 
