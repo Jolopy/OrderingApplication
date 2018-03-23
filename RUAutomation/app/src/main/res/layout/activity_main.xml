@@ -1,272 +1,350 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.cczec.ruautomation.MainActivity"
-    tools:ignore="ContentDescription">
-
-
-    <Button
-        android:id="@+id/orderButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageButton12"
-        android:layout_toEndOf="@+id/imageButton12"
-        android:text="@string/order" />
+    tools:ignore="ContentDescription"
+    android:fitsSystemWindows="true">
 
 
     <ImageButton
+        android:layout_column="0"
+        android:layout_row="0"
         android:id="@+id/imageButton1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/cup" />
+        app:srcCompat="@drawable/cup"
+        android:layout_height="175dp"
+        android:layout_width="200dp" />
 
     <ImageButton
+        android:layout_column="1"
+        android:layout_row="0"
         android:id="@+id/imageButton2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/imageButton1"
-        app:srcCompat="@drawable/pancakes" />
+        app:srcCompat="@drawable/pancakes"
+        android:layout_height="175dp"
+        android:layout_width="200dp" />
 
     <ImageButton
+        android:layout_column="2"
+        android:layout_row="0"
         android:id="@+id/imageButton3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/imageButton2"
-        app:srcCompat="@drawable/apple" />
+        app:srcCompat="@drawable/apple"
+        android:layout_height="175dp"
+        android:layout_width="200dp" />
 
     <ImageButton
+        android:layout_column="3"
+        android:layout_row="0"
         android:id="@+id/imageButton4"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/imageButton3"
-        app:srcCompat="@drawable/coffee" />
+        app:srcCompat="@drawable/coffee"
+        android:layout_height="175dp"
+        android:layout_width="200dp" />
 
 
     <ImageButton
+        android:layout_column="0"
+        android:layout_row="1"
         android:id="@+id/imageButton5"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        app:srcCompat="@drawable/soda" />
+        app:srcCompat="@drawable/soda"
+        android:layout_height="175dp"
+        android:layout_width="200dp" />
 
     <ImageButton
+        android:layout_column="1"
+        android:layout_row="1"
         android:id="@+id/imageButton6"
+        android:layout_height="175dp"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/imageButton5"
         app:srcCompat="@drawable/sub" />
 
     <ImageButton
+        android:layout_column="2"
+        android:layout_row="1"
         android:id="@+id/imageButton7"
+        android:layout_height="175dp"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignTop="@+id/imageButton6"
-        android:layout_toEndOf="@+id/imageButton6"
         app:srcCompat="@drawable/hotdog" />
 
     <ImageButton
+        android:layout_column="3"
+        android:layout_row="1"
         android:id="@+id/imageButton8"
+        android:layout_height="175dp"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignTop="@+id/imageButton7"
-        android:layout_toEndOf="@+id/imageButton7"
         app:srcCompat="@drawable/burger" />
 
     <ImageButton
+        android:layout_column="0"
+        android:layout_row="2"
         android:id="@+id/imageButton9"
+        android:layout_height="175dp"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         app:srcCompat="@drawable/beer" />
 
     <ImageButton
+        android:layout_column="1"
+        android:layout_row="2"
         android:id="@+id/imageButton10"
+        android:layout_height="175dp"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/imageButton9"
         app:srcCompat="@drawable/steak" />
 
     <ImageButton
+        android:layout_column="2"
+        android:layout_row="2"
         android:id="@+id/imageButton11"
+        android:layout_height="175dp"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/imageButton10"
         app:srcCompat="@drawable/turkey" />
 
     <ImageButton
+        android:layout_column="3"
+        android:layout_row="2"
         android:id="@+id/imageButton12"
+        android:layout_height="175dp"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignTop="@+id/imageButton11"
-        android:layout_toEndOf="@+id/imageButton11"
         app:srcCompat="@drawable/icecream" />
 
-    <TextView
-        android:id="@+id/textViewPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/orderButton"
-        android:layout_toEndOf="@+id/imageButton12"
-        android:text="@string/total_price_price"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/black"
-        tools:ignore="LabelFor" />
 
-    <TextView
-        android:id="@+id/totalPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textViewPrice"
-        android:layout_toEndOf="@+id/imageButton12"
-        android:text="@string/total_price"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/black"
-        tools:ignore="LabelFor" />
+    <LinearLayout
+        android:layout_column="4"
+        android:layout_row="0"
+        android:layout_height="175dp"
+        android:layout_width="250dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:text="@string/your_order"
+            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/your_order"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/orderReview1"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
 
-    <TextView
-        android:id="@+id/orderReview1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
+        <TextView
+            android:id="@+id/orderReview2"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
 
-    <TextView
-        android:id="@+id/orderReview2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview1"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview2"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview3"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview4"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview5"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview6"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview7"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview8"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview9"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview10"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/orderReview12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orderReview11"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:text="@string/actual_order"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="26sp" />
+        <TextView
+            android:id="@+id/orderReview3"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_column="4"
+        android:layout_row="1"
+        android:layout_height="175dp"
+        android:layout_width="250dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/orderReview4"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderReview5"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderReview6"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderReview7"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderReview8"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_column="4"
+        android:layout_row="2"
+        android:layout_height="175dp"
+        android:layout_width="250dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/orderReview9"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderReview10"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderReview11"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderReview12"
+            android:layout_height="26dp"
+            android:layout_width="250dp"
+            android:text="@string/actual_order"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:layout_weight="1"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:id="@+id/dud"
+            android:layout_width="250dp"
+            android:layout_height="26dp"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="26sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_column="3"
+        android:layout_row="4"
+        android:layout_height="100dp"
+        android:layout_width="175dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/black"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_price_price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/black"
+            tools:ignore="LabelFor" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_column="4"
+        android:layout_row="4"
+        android:background="@android:color/holo_green_light"
+        android:padding="5dp"
+        android:text="@string/order"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
+
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_column="2"
+        android:layout_row="4"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/callWaiter"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@android:color/holo_blue_light"
+            android:padding="5dp"
+            android:text="Call Waiter"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <EditText
+            android:id="@+id/tableNumber"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="Enter Table Number:"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:cursorVisible="false"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/payNow"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:background="@android:color/holo_red_light"
+        android:padding="5dp"
+        android:text="Pay Now"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
+
+
+</GridLayout>

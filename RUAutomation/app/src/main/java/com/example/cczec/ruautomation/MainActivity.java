@@ -4,8 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.text.DecimalFormat;
@@ -79,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
         ImageButton imageButton12 = findViewById(R.id.imageButton12);
 
         Button orderButton = findViewById(R.id.orderButton);
+        //Button managerButton = findViewById(R.id.callManager);
+        //Button waiterButton = findViewById(R.id.callButton);
+        Button payButton = findViewById(R.id.payNow);
+
+        final EditText tableNumber = findViewById(R.id.tableNumber);
+
         textViewPrice = findViewById(R.id.textViewPrice);
         orderReview1 =findViewById(R.id.orderReview1);
         orderReview2 =findViewById(R.id.orderReview2);
@@ -233,9 +242,16 @@ public class MainActivity extends AppCompatActivity {
                 orderReview12.setText(strIceCream + Integer.toString(ice_Cream_Count));
             }
         });
+
+
         //##########################################################################################
         //Order Button
         //##########################################################################################
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference payRef= database.getReference("TablePayStatus");
+
+
         orderButton.setOnClickListener(new View.OnClickListener() {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference orderNumberRef= database.getReference("OrderNumber");
@@ -293,6 +309,16 @@ public class MainActivity extends AppCompatActivity {
                     ice_Cream_Count = 0;
                 }
                 order_number = order_number + 1;
+                payRef.child(tableNumber.getText().toString()).setValue("Ordered!");
+                Toast.makeText(getApplicationContext(), "Your order has been placed!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        payButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DecimalFormat df = new DecimalFormat("0.00");
                 total_price = 0;
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
 
@@ -308,8 +334,14 @@ public class MainActivity extends AppCompatActivity {
                 orderReview10.setText("");
                 orderReview11.setText("");
                 orderReview12.setText("");
+                payRef.child(tableNumber.getText().toString()).setValue("Paid!");
+                Toast.makeText(getApplicationContext(), "Table number " + tableNumber.getText().toString() + " has Paid!", Toast.LENGTH_SHORT).show();
+
+
             }
         });
+
+
 
 
     }
