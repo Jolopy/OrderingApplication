@@ -2,6 +2,8 @@ package com.example.cczec.templateruapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -12,23 +14,23 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView test;
+    private TextView orderReadyFB;
+    private DatabaseReference mDatabaseFB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        test = findViewById(R.id.test);
+        mDatabaseFB = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+        orderReadyFB = (TextView) findViewById(R.id.orderReady);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference t1Ref = database.getReferenceFromUrl("https://ruautomation-918ed.firebaseio.com/TableNumber/1");
-
-        t1Ref.addValueEventListener(new ValueEventListener() {
+        mDatabaseFB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value1 =  dataSnapshot.getValue(String.class);
-                test.setText(value1);
+                String orderReady = dataSnapshot.getValue().toString();
+                orderReadyFB.setText("OrderRead : " + orderReady);
+
             }
 
             @Override
@@ -36,5 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        //("https://ruautomation-918ed.firebaseio.com/TableNumber/1");
     }
 }
