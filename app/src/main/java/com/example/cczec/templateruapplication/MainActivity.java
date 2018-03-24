@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -13,11 +14,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView orderReadyFB;
     private DatabaseReference mDatabaseFB;
     private Button confirmBtnFB;
+    private TextView orderNumberFB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         confirmBtnFB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                //orderNumberFB = (EditText) findViewById(R.id.orderNum);
+                //DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/OrderNum" + orderNumberFB);
                 DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/OrderNum01");
                 order.removeValue();
 
