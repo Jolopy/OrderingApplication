@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String orderReady = dataSnapshot.getValue().toString();
-                orderReadyFB.setText("OrderRead : " + orderReady);
+                orderReadyFB.setText("OrderReady : " + orderReady);
 
             }
 
@@ -41,10 +41,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        confirmBtnFB = (Button) findViewById(R.id.confirmBtn);
         confirmBtnFB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                mDatabaseFB.child("")
+                DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/OrderNum01");
+                order.removeValue();
+
             }
         });
 
