@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RUAutomation.iml" filepath="$PROJECT_DIR$/RUAutomation.iml" />
+      <module fileurl="file://C:\Users\cczec\Desktop\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\RUAutomation\RUAutomation.iml" filepath="C:\Users\cczec\Desktop\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\RUAutomation\RUAutomation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\cczec\Desktop\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\RUAutomation\app\app.iml" filepath="C:\Users\cczec\Desktop\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\OrderingApplication-b318e5ae39503cebeb56c1d0ab2a1fc408539d3a\RUAutomation\app\app.iml" />
     </modules>
   </component>
 </project>

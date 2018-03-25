@@ -309,8 +309,8 @@ public class MainActivity extends AppCompatActivity {
                     ice_Cream_Count = 0;
                 }
                 order_number = order_number + 1;
-                payRef.child(tableNumber.getText().toString()).setValue("Ordered!");
-                Toast.makeText(getApplicationContext(), "Your order has been placed!", Toast.LENGTH_LONG).show();
+                payRef.child(tableNumber.getText().toString()).setValue("Ordered");
+                Toast.makeText(getApplicationContext(), "Your order has been placed", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -334,7 +334,7 @@ public class MainActivity extends AppCompatActivity {
                 orderReview10.setText("");
                 orderReview11.setText("");
                 orderReview12.setText("");
-                payRef.child(tableNumber.getText().toString()).setValue("Paid!");
+                payRef.child(tableNumber.getText().toString()).setValue("Paid");
                 Toast.makeText(getApplicationContext(), "Table number " + tableNumber.getText().toString() + " has Paid!", Toast.LENGTH_SHORT).show();
 
 

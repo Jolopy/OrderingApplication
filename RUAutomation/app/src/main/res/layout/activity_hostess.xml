@@ -14,135 +14,175 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/right_side"
-        android:layout_width="800dp"
+        android:layout_width="500dp"
         android:layout_height="match_parent" >
 
         <GridLayout
-            android:columnCount="5"
-            android:rowCount="4"
+            android:columnCount="4"
+            android:rowCount="5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dp">
 
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="0"
+                android:layout_column="0"
                 android:id="@+id/tableNumber1"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables" />
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="0"
+                android:layout_column="1"
                 android:id="@+id/tableNumber2"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="0"
+                android:layout_column="2"
                 android:id="@+id/tableNumber3"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="0"
+                android:layout_column="3"
                 android:id="@+id/tableNumber4"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="1"
+                android:layout_column="0"
                 android:id="@+id/tableNumber5"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
 
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="1"
+                android:layout_column="1"
                 android:id="@+id/tableNumber6"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="1"
+                android:layout_column="2"
                 android:id="@+id/tableNumber7"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="1"
+                android:layout_column="3"
                 android:id="@+id/tableNumber8"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="2"
+                android:layout_column="0"
                 android:id="@+id/tableNumber9"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="2"
+                android:layout_column="1"
                 android:id="@+id/tableNumber10"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="2"
+                android:layout_column="2"
                 android:id="@+id/tableNumber11"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="2"
+                android:layout_column="3"
                 android:id="@+id/tableNumber12"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="3"
+                android:layout_column="0"
                 android:id="@+id/tableNumber13"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="3"
+                android:layout_column="1"
                 android:id="@+id/tableNumber14"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="3"
+                android:layout_column="2"
                 android:id="@+id/tableNumber15"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="3"
+                android:layout_column="3"
                 android:id="@+id/tableNumber16"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="4"
+                android:layout_column="0"
                 android:id="@+id/tableNumber17"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="4"
+                android:layout_column="1"
                 android:id="@+id/tableNumber18"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables" />
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="4"
+                android:layout_column="2"
                 android:id="@+id/tableNumber19"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
             <ImageButton
+                android:layout_height="70dp"
+                android:layout_width="120dp"
+                android:layout_row="4"
+                android:layout_column="3"
                 android:id="@+id/tableNumber20"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
                 android:background="@drawable/empty"
                 android:contentDescription="@string/tables"/>
         </GridLayout>
@@ -157,132 +197,169 @@
             android:id="@+id/avgWaitTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Avg Table Wait Times: "
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textStyle="bold" />
+            android:text="Avg Wait Times: "
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/Timer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 2 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 1 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 3 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 2 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 4 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 3 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 5 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 4 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 6 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 5 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 7 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 6 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 8 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 7 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 9 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 8 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 10 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 9 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 11 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 10 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 1 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Table 11 Open"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 12 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 13 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 14 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 15 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 16 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 17 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 18 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 19 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
+
         <TextView
             android:id="@+id/Timer20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Table 20 Open"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="12.5sp" />
 
     </LinearLayout>
 
