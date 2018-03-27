@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView orderReview11;
     private TextView orderReview12;
 
-    public String str1 = "Coffee: ",str2 = "Caesar Salad: ",str3 = "Tom w/ Mutz: ",
+    public String str1 = "Coffee: ",str2 = "Caesar Salad: ",str3 = "Tom w Mutz: ",
             str4 = "Pumpkin Pie: ",str5 = "Royal Burger: ",str6 = "Chicken Wrap: ",str7 = "Bacon Potatos: ",
             str8 = "Choclate Cake: ",str9 = "Grilled Salmon: ",str10 = "Spaghetti: ",str11 = "Pork Chops: ",
             str12 = "Hot Fudge ";
@@ -257,53 +257,54 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DecimalFormat df = new DecimalFormat("0.00");
                 orderNumberRef.child(Integer.toString(order_number)).setValue(" ");
-                orderNumberRef.child(Integer.toString(order_number)).push().setValue("Total:" + df.format(total_price));
+                orderNumberRef.child(Integer.toString(order_number)).child("TableNumber").setValue(tableNumber.getText().toString());
+                orderNumberRef.child(Integer.toString(order_number)).child("Total").setValue(df.format(total_price));
                 if (count1 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str1 + count1);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str1).setValue(count1);
                     count1 = 0;
                 }
                 if (count2 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str2 + count2);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str2).setValue(count2);
                     count2 = 0;
                 }
                 if (count3 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str3 + count3);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str3).setValue(count3);
                     count3 = 0;
                 }
                 if (count4 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str4 + count4);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str4).setValue(count4);
                     count4 = 0;
                 }
                 if (count5 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str5 + count5);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str5).setValue(count5);
                     count5 = 0;
                 }
                 if (count6 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str6 + count6);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str6).setValue(count6);
                     count6 = 0;
                 }
                 if (count7 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str7 + count7);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str7).setValue(count7);
                     count7 = 0;
                 }
                 if (count8 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str8 + count8);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str8).setValue(count8);
                     count8 = 0;
                 }
                 if (count9 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str9 + count9);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str9).setValue(count9);
                     count9 = 0;
                 }
                 if (count10 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str10 + count10);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str10).setValue(count10);
                     count10 = 0;
                 }
                 if (count11 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str11 + count11);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str11).setValue(count11);
                     count11 = 0;
                 }
                 if (count12 >= 1){
-                    orderNumberRef.child(Integer.toString(order_number)).push().setValue(str12 + count12);
+                    orderNumberRef.child(Integer.toString(order_number)).child(str12).setValue(count12);
                     count12 = 0;
                 }
                 order_number = order_number + 1;
