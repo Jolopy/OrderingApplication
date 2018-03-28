@@ -16,49 +16,49 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView orderReadyFB;
     private DatabaseReference mDatabaseFB;
-    private Button confirmBtnFB;
-    private TextView orderNumberFB;
+    EditText orderNum;
+    ArrayList<String> tables = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        orderNum = findViewById(R.id.orderNum);
         mDatabaseFB = FirebaseDatabase.getInstance().getReference().child("OrderReady");
         orderReadyFB = (TextView) findViewById(R.id.orderReady);
 
         mDatabaseFB.addValueEventListener(new ValueEventListener() {
             @Override
+
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String orderReady = dataSnapshot.getValue().toString();
-                orderReadyFB.setText("OrderReady : " + orderReady);
+                for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
+                    tables.add(childSnapshot.getValue().toString());
+                }
 
+                //String orderReady = dataSnapshot.getValue().toString();
+                orderReadyFB.setText("Orders READY for Table Numbers : " + tables);
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
 
-        confirmBtnFB = (Button) findViewById(R.id.confirmBtn);
-        confirmBtnFB.setOnClickListener(new View.OnClickListener(){
+        Button confirmBtn = findViewById(R.id.confirmBtn);
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                //orderNumberFB = (EditText) findViewById(R.id.orderNum);
-                //DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/OrderNum" + orderNumberFB);
-                DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/OrderNum01");
+            public void onClick(View view){
+                DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/Order " + orderNum.getText().toString());
                 order.removeValue();
-
             }
         });
-
-
-
         //("https://ruautomation-918ed.firebaseio.com/TableNumber/1");
     }
 }
