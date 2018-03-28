@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onDataChange(DataSnapshot dataSnapshot) {
+                tables.clear(); // Avoids appending already existing list
                 for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
                     tables.add(childSnapshot.getValue().toString());
                 }
