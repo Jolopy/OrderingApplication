@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:columnCount="1"
+    android:rowCount="6">
 
 
     <Button
@@ -8,15 +10,15 @@
         android:layout_column="0"
         android:id="@+id/buttonMenu"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:text="@string/Employee" />
+        android:text="@string/Employee"
+        android:layout_rowWeight="1"/>
 
     <Button
         android:layout_row="1"
         android:layout_column="0"
         android:id="@+id/HostessHome"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_rowWeight="1"
         android:text="@string/Hostess" />
 
     <Button
@@ -24,7 +26,7 @@
         android:layout_column="0"
         android:id="@+id/BusboyHome"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_rowWeight="1"
         android:text="@string/Busboy" />
 
     <Button
@@ -32,15 +34,23 @@
         android:layout_column="0"
         android:id="@+id/buttonCustomerHome"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_rowWeight="1"
         android:text="@string/Menu" />
 
     <Button
         android:layout_row="4"
         android:layout_column="0"
+        android:id="@+id/buttonWaiterHome"
+        android:layout_width="match_parent"
+        android:layout_rowWeight="1"
+        android:text="Waiter" />
+
+    <Button
+        android:layout_row="5"
+        android:layout_column="0"
         android:id="@+id/buttonCareerHome"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_rowWeight="1"
         android:text="@string/Career" />
 
 </GridLayout>
