@@ -130,7 +130,10 @@ public class HostessActivity extends AppCompatActivity {
         final TextView avgWaitTime = findViewById(R.id.avgWaitTime);
 
 
-
+        /**
+         * NEED TO FIX THIS COODE NO EFFICENT AT ALL. Chris Coding to the maximum
+         */
+        /**
         Timer tableTimer = new Timer();
         tableTimer.scheduleAtFixedRate(new TimerTask() {
                                              @Override
@@ -244,7 +247,7 @@ public class HostessActivity extends AppCompatActivity {
                 0,
                 //Set the amount of time between each execution (in milliseconds)
                 6000);
-
+        **/
 
 
 
