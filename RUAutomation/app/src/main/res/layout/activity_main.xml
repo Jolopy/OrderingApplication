@@ -15,98 +15,97 @@
         android:layout_height="90dp"
         android:layout_column="0"
         android:layout_row="0"
-        app:srcCompat="@drawable/cup" />
+        android:background="@drawable/coffee" />
 
     <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="1"
         android:layout_row="0"
-        android:id="@+id/imageButton2"
-        app:srcCompat="@drawable/pancakes"
-        android:layout_height="90dp"
-        android:layout_width="120dp" />
+        android:background="@drawable/salad" />
 
 
     <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="2"
         android:layout_row="0"
-        android:id="@+id/imageButton3"
-        app:srcCompat="@drawable/apple"
-        android:layout_height="90dp"
-        android:layout_width="120dp" />
+        android:background="@drawable/tomato" />
 
     <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="3"
         android:layout_row="0"
-        android:id="@+id/imageButton4"
-        app:srcCompat="@drawable/coffee"
-        android:layout_height="90dp"
-        android:layout_width="120dp" />
-
+        android:background="@drawable/pie" />
 
 
     <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="0"
         android:layout_row="1"
-        android:id="@+id/imageButton5"
-        app:srcCompat="@drawable/soda"
-        android:layout_height="90dp"
-        android:layout_width="120dp" />
+        android:background="@drawable/burg" />
 
     <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="1"
         android:layout_row="1"
-        android:id="@+id/imageButton6"
-        android:layout_height="90dp"
-        android:layout_width="120dp"
-        app:srcCompat="@drawable/sub" />
+        android:background="@drawable/chickenwrap" />
 
     <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="2"
         android:layout_row="1"
-        android:id="@+id/imageButton7"
-        android:layout_height="90dp"
-        android:layout_width="120dp"
-        app:srcCompat="@drawable/hotdog" />
+        android:background="@drawable/taters" />
 
     <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="3"
         android:layout_row="1"
-        android:id="@+id/imageButton8"
-        android:layout_height="90dp"
-        android:layout_width="120dp"
-        app:srcCompat="@drawable/burger" />
+        android:background="@drawable/cake" />
 
     <ImageButton
         android:id="@+id/imageButton9"
-        android:layout_height="90dp"
         android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="0"
         android:layout_row="2"
-        app:srcCompat="@drawable/beer" />
+        android:background="@drawable/salmon" />
 
     <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="1"
         android:layout_row="2"
-        android:id="@+id/imageButton10"
-        android:layout_height="90dp"
-        android:layout_width="120dp"
-        app:srcCompat="@drawable/steak" />
+        android:background="@drawable/spaghett" />
 
     <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="2"
         android:layout_row="2"
-        android:id="@+id/imageButton11"
-        android:layout_height="90dp"
-        android:layout_width="120dp"
-        app:srcCompat="@drawable/turkey" />
+        android:background="@drawable/porkchops" />
 
     <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_column="3"
         android:layout_row="2"
-        android:id="@+id/imageButton12"
-        android:layout_height="90dp"
-        android:layout_width="120dp"
-        app:srcCompat="@drawable/icecream" />
+        android:background="@drawable/fudge" />
 
 
     <LinearLayout
@@ -122,7 +121,7 @@
             android:layout_height="25dp"
             android:layout_weight="1"
             android:text="@string/your_order"
-            android:textAppearance="@style/TextAppearance.AppCompat" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
             android:id="@+id/orderReview1"

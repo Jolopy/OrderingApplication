@@ -38,6 +38,16 @@
             android:label="BusboyActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".WaiterActivity"
+            android:label="WaiterActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ChefActivity"
+            android:label="ChefActivity"
+            android:screenOrientation="landscape">
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
