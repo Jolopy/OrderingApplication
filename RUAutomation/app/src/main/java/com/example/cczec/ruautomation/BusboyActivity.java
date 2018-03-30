@@ -1,5 +1,6 @@
 package com.example.cczec.ruautomation;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -73,11 +74,25 @@ public class BusboyActivity extends AppCompatActivity {
         final DatabaseReference t19Ref = database.getReferenceFromUrl("https://ruautomation-918ed.firebaseio.com/TableNumber/19");
         final DatabaseReference t20Ref = database.getReferenceFromUrl("https://ruautomation-918ed.firebaseio.com/TableNumber/20");
 
+        final DatabaseReference tableRef= database.getReference("TableNumber");
+
         t1Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value1 =  dataSnapshot.getValue(String.class);
-                textViewTables1.setText(value1);
+                String value =  dataSnapshot.getValue(String.class);
+                textViewTables1.setText("Table 1: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables1.setBackgroundColor(Color.YELLOW);
+                    textViewTables1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                               tableRef.child("1").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables1.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -89,8 +104,20 @@ public class BusboyActivity extends AppCompatActivity {
         t2Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value2 =  dataSnapshot.getValue(String.class);
-                textViewTables2.setText(value2);
+                String value =  dataSnapshot.getValue(String.class);
+                textViewTables2.setText("Table 2: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables2.setBackgroundColor(Color.YELLOW);
+                    textViewTables2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("2").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables2.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -102,8 +129,20 @@ public class BusboyActivity extends AppCompatActivity {
         t3Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value3 =  dataSnapshot.getValue(String.class);
-                textViewTables3.setText(value3);
+                String value =  dataSnapshot.getValue(String.class);
+                textViewTables3.setText("Table 3: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables3.setBackgroundColor(Color.YELLOW);
+                    textViewTables3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("3").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables3.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -115,8 +154,20 @@ public class BusboyActivity extends AppCompatActivity {
         t4Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value4 =  dataSnapshot.getValue(String.class);
-                textViewTables4.setText(value4);
+                String value =  dataSnapshot.getValue(String.class);
+                textViewTables4.setText("Table 4: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables4.setBackgroundColor(Color.YELLOW);
+                    textViewTables4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("4").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables4.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -128,8 +179,20 @@ public class BusboyActivity extends AppCompatActivity {
         t5Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value5 =  dataSnapshot.getValue(String.class);
-                textViewTables5.setText(value5);
+                String value =  dataSnapshot.getValue(String.class);
+                textViewTables5.setText("Table 5: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables5.setBackgroundColor(Color.YELLOW);
+                    textViewTables5.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("5").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables5.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -142,20 +205,45 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables6.setText(value);
+                textViewTables6.setText("Table 6: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables6.setBackgroundColor(Color.YELLOW);
+                    textViewTables6.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("6").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables6.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
 
         t7Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables7.setText(value);
+                textViewTables7.setText("Table 7: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables7.setBackgroundColor(Color.YELLOW);
+                    textViewTables7.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("7").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables7.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -168,7 +256,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables8.setText(value);
+                textViewTables8.setText("Table 8: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables8.setBackgroundColor(Color.YELLOW);
+                    textViewTables8.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("8").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables8.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -181,7 +281,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables9.setText(value);
+                textViewTables9.setText("Table 9: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables9.setBackgroundColor(Color.YELLOW);
+                    textViewTables9.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("9").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables9.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -194,7 +306,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables10.setText(value);
+                textViewTables10.setText("Table 10: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables10.setBackgroundColor(Color.YELLOW);
+                    textViewTables10.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("10").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables10.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -207,7 +331,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables11.setText(value);
+                textViewTables11.setText("Table 11: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables11.setBackgroundColor(Color.YELLOW);
+                    textViewTables11.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("11").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables11.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -220,7 +356,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables12.setText(value);
+                textViewTables12.setText("Table 12: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables12.setBackgroundColor(Color.YELLOW);
+                    textViewTables12.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("12").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables12.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -233,7 +381,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables13.setText(value);
+                textViewTables13.setText("Table 13: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables13.setBackgroundColor(Color.YELLOW);
+                    textViewTables13.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("13").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables13.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -246,7 +406,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables14.setText(value);
+                textViewTables14.setText("Table 14: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables14.setBackgroundColor(Color.YELLOW);
+                    textViewTables14.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("14").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables14.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -259,7 +431,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables15.setText(value);
+                textViewTables15.setText("Table 15: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables15.setBackgroundColor(Color.YELLOW);
+                    textViewTables15.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("15").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables15.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -272,7 +456,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables16.setText(value);
+                textViewTables16.setText("Table 16: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables16.setBackgroundColor(Color.YELLOW);
+                    textViewTables16.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("16").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables16.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -285,7 +481,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables17.setText(value);
+                textViewTables17.setText("Table 17: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables17.setBackgroundColor(Color.YELLOW);
+                    textViewTables17.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("17").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables17.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -298,7 +506,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables18.setText(value);
+                textViewTables18.setText("Table 18: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables18.setBackgroundColor(Color.YELLOW);
+                    textViewTables18.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("18").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables18.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -311,7 +531,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables19.setText(value);
+                textViewTables19.setText("Table 19: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables19.setBackgroundColor(Color.YELLOW);
+                    textViewTables19.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("19").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables19.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override
@@ -324,7 +556,19 @@ public class BusboyActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value =  dataSnapshot.getValue(String.class);
-                textViewTables20.setText(value);
+                textViewTables20.setText("Table 20: " + value);
+                if(value.equals("Cleaning")){
+                    textViewTables20.setBackgroundColor(Color.YELLOW);
+                    textViewTables20.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("20").setValue("Empty");
+                        }
+                    });
+                }
+                else{
+                    textViewTables20.setBackgroundColor(Color.WHITE);
+                }
             }
 
             @Override

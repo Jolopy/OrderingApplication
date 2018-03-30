@@ -28,7 +28,7 @@ public class HostessActivity extends AppCompatActivity {
             table8,table9,table10,table11,table12,table13,table14,
             table15,table16,table17,table18,table19,table20 = 0;
 
-    Timer tableTimer = new Timer();
+    //Timer tableTimer = new Timer();
 
     private int table1SeatedTime1 = 0;
     private int table1SeatedTime2 = 0;
@@ -85,26 +85,26 @@ public class HostessActivity extends AppCompatActivity {
         //Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference tableRef = database.getReference("TableNumber");
-        final ImageButton tableNumber1 = findViewById(R.id.tableNumber1);
-        final ImageButton tableNumber2 = findViewById(R.id.tableNumber2);
-        final ImageButton tableNumber3 = findViewById(R.id.tableNumber3);
-        final ImageButton tableNumber4 = findViewById(R.id.tableNumber4);
-        final ImageButton tableNumber5 = findViewById(R.id.tableNumber5);
-        final ImageButton tableNumber6 = findViewById(R.id.tableNumber6);
-        final ImageButton tableNumber7 = findViewById(R.id.tableNumber7);
-        final ImageButton tableNumber8 = findViewById(R.id.tableNumber8);
-        final ImageButton tableNumber9 = findViewById(R.id.tableNumber9);
-        final ImageButton tableNumber10 = findViewById(R.id.tableNumber10);
-        final ImageButton tableNumber11 = findViewById(R.id.tableNumber11);
-        final ImageButton tableNumber12 = findViewById(R.id.tableNumber12);
-        final ImageButton tableNumber13 = findViewById(R.id.tableNumber13);
-        final ImageButton tableNumber14 = findViewById(R.id.tableNumber14);
-        final ImageButton tableNumber15 = findViewById(R.id.tableNumber15);
-        final ImageButton tableNumber16 = findViewById(R.id.tableNumber16);
-        final ImageButton tableNumber17 = findViewById(R.id.tableNumber17);
-        final ImageButton tableNumber18 = findViewById(R.id.tableNumber18);
-        final ImageButton tableNumber19 = findViewById(R.id.tableNumber19);
-        final ImageButton tableNumber20 = findViewById(R.id.tableNumber20);
+        final TextView tableNumber1 = findViewById(R.id.hostessTable1);
+        final TextView tableNumber2 = findViewById(R.id.hostessTable2);
+        final TextView tableNumber3 = findViewById(R.id.hostessTable3);
+        final TextView tableNumber4 = findViewById(R.id.hostessTable4);
+        final TextView tableNumber5 = findViewById(R.id.hostessTable5);
+        final TextView tableNumber6 = findViewById(R.id.hostessTable6);
+        final TextView tableNumber7 = findViewById(R.id.hostessTable7);
+        final TextView tableNumber8 = findViewById(R.id.hostessTable8);
+        final TextView tableNumber9 = findViewById(R.id.hostessTable9);
+        final TextView tableNumber10 = findViewById(R.id.hostessTable10);
+        final TextView tableNumber11 = findViewById(R.id.hostessTable11);
+        final TextView tableNumber12 = findViewById(R.id.hostessTable12);
+        final TextView tableNumber13 = findViewById(R.id.hostessTable13);
+        final TextView tableNumber14 = findViewById(R.id.hostessTable14);
+        final TextView tableNumber15 = findViewById(R.id.hostessTable15);
+        final TextView tableNumber16 = findViewById(R.id.hostessTable16);
+        final TextView tableNumber17 = findViewById(R.id.hostessTable17);
+        final TextView tableNumber18 = findViewById(R.id.hostessTable18);
+        final TextView tableNumber19 = findViewById(R.id.hostessTable19);
+        final TextView tableNumber20 = findViewById(R.id.hostessTable20);
 
         final TextView timer1 = findViewById(R.id.Timer1);
         final TextView timer2 = findViewById(R.id.Timer2);
@@ -127,7 +127,7 @@ public class HostessActivity extends AppCompatActivity {
         final TextView timer19 = findViewById(R.id.Timer19);
         final TextView timer20 = findViewById(R.id.Timer20);
 
-        final TextView avgWaitTime = findViewById(R.id.avgWaitTime);
+        //final TextView avgWaitTime = findViewById(R.id.avgWaitTime);
 
 
         /**
@@ -260,7 +260,7 @@ public class HostessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(table1 == 2)
                 {
-                    tableNumber1.setBackgroundResource(R.drawable.empty);
+                    tableNumber1.setBackgroundColor(Color.WHITE);
                     tableRef.child("1").setValue("Empty");
                     table1 = 0;
                     //TIMER
@@ -278,7 +278,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime1;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated1 = 0;
                     table1SeatedTime1 = 0;
                     //TIMER
@@ -307,7 +307,7 @@ public class HostessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(table2 == 2)
                 {
-                    tableNumber2.setBackgroundResource(R.drawable.empty);
+                    tableNumber1.setBackgroundColor(Color.WHITE);
                     tableRef.child("2").setValue("Empty");
                     table2 = 0;
                     //TIMER
@@ -325,7 +325,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime2;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated2 = 0;
                     table1SeatedTime2 = 0;
                     //TIMER
@@ -356,7 +356,7 @@ public class HostessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(table3 == 2)
                 {
-                    tableNumber3.setBackgroundResource(R.drawable.empty);
+                    tableNumber1.setBackgroundColor(Color.WHITE);
                     tableRef.child("3").setValue("Empty");
                     table3 = 0;
                     //TIMER
@@ -374,7 +374,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime3;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated3 = 0;
                     table1SeatedTime3 = 0;
                     //TIMER
@@ -405,7 +405,7 @@ public class HostessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(table4 == 2)
                 {
-                    tableNumber4.setBackgroundResource(R.drawable.empty);
+                    tableNumber1.setBackgroundColor(Color.WHITE);
                     tableRef.child("4").setValue("Empty");
                     table4 = 0;
                     //TIMER
@@ -423,7 +423,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime4;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated4 = 0;
                     table1SeatedTime4 = 0;
                     //TIMER
@@ -454,7 +454,7 @@ public class HostessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(table5 == 2)
                 {
-                    tableNumber5.setBackgroundResource(R.drawable.empty);
+                    tableNumber1.setBackgroundColor(Color.WHITE);
                     tableRef.child("5").setValue("Empty");
                     table5 = 0;
                     //TIMER
@@ -472,7 +472,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime5;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated5 = 0;
                     table1SeatedTime5 = 0;
                     //TIMER
@@ -502,7 +502,7 @@ public class HostessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(table6 == 2)
                 {
-                    tableNumber6.setBackgroundResource(R.drawable.empty);
+                    tableNumber1.setBackgroundColor(Color.WHITE);
                     tableRef.child("6").setValue("Empty");
                     table6 = 0;
                     //TIMER
@@ -519,7 +519,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime6;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated6 = 0;
                     table1SeatedTime6 = 0;
                     //TIMER
@@ -565,7 +565,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime7;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated7 = 0;
                     table1SeatedTime7 = 0;
                     //TIMER
@@ -611,7 +611,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime8;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated8 = 0;
                     table1SeatedTime8 = 0;
                     //TIMER
@@ -657,7 +657,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime9;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated9 = 0;
                     table1SeatedTime9 = 0;
                     //TIMER
@@ -703,7 +703,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime10;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated10 = 0;
                     table1SeatedTime10 = 0;
                     //TIMER
@@ -748,7 +748,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime11;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated11 = 0;
                     table1SeatedTime11 = 0;
                     //TIMER
@@ -794,7 +794,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime12;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated12 = 0;
                     table1SeatedTime12 = 0;
                     //TIMER
@@ -840,7 +840,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime13;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated13 = 0;
                     table1SeatedTime13 = 0;
                     //TIMER
@@ -886,7 +886,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime14;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated14 = 0;
                     table1SeatedTime14 = 0;
                     //TIMER
@@ -932,7 +932,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime15;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated15 = 0;
                     table1SeatedTime15 = 0;
                     //TIMER
@@ -978,7 +978,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime16;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated16 = 0;
                     table1SeatedTime16 = 0;
                     //TIMER
@@ -1024,7 +1024,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime17;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated17 = 0;
                     table1SeatedTime17 = 0;
                     //TIMER
@@ -1070,7 +1070,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime18;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated18 = 0;
                     table1SeatedTime18 = 0;
                     //TIMER
@@ -1116,7 +1116,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime19;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated19 = 0;
                     table1SeatedTime19 = 0;
                     //TIMER
@@ -1162,7 +1162,7 @@ public class HostessActivity extends AppCompatActivity {
                     tableAvgTime = tableAvgTime + table1SeatedTime20;
                     tableAvgCount = tableAvgCount + 1;
                     tableTotalAvg = tableAvgTime/tableAvgCount;
-                    avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
+                    //avgWaitTime.setText("Avg Wait Time: " + tableTotalAvg);
                     seated20 = 0;
                     table1SeatedTime20 = 0;
                     //TIMER
