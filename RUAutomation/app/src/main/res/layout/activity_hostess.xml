@@ -24,7 +24,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -36,7 +36,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -48,7 +48,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -60,7 +60,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -72,7 +72,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -84,7 +84,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -96,7 +96,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -108,7 +108,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -120,7 +120,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -132,7 +132,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -144,7 +144,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -156,7 +156,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -168,7 +168,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -180,7 +180,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -192,7 +192,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -204,7 +204,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -216,7 +216,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -228,7 +228,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -240,7 +240,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -252,7 +252,7 @@
                 android:layout_rowWeight="1"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Setting Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -276,181 +276,181 @@
 
         <TextView
             android:id="@+id/Timer1"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 1 Open"
+            android:layout_weight="1"
+            android:text="Table 1: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer2"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 2 Open"
+            android:layout_weight="1"
+            android:text="Table 2: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer3"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 3 Open"
+            android:layout_weight="1"
+            android:text="Table 3: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer4"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 4 Open"
+            android:layout_weight="1"
+            android:text="Table 4: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer5"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 5 Open"
+            android:layout_weight="1"
+            android:text="Table 5: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer6"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 6 Open"
+            android:layout_weight="1"
+            android:text="Table 6: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer7"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 7 Open"
+            android:layout_weight="1"
+            android:text="Table 7: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer8"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 8 Open"
+            android:layout_weight="1"
+            android:text="Table 8: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer9"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 9 Open"
+            android:layout_weight="1"
+            android:text="Table 9: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer10"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 10 Open"
+            android:layout_weight="1"
+            android:text="Table 10: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer11"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 11 Open"
+            android:layout_weight="1"
+            android:text="Table 11: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer12"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 12 Open"
+            android:layout_weight="1"
+            android:text="Table 12: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer13"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 13 Open"
+            android:layout_weight="1"
+            android:text="Table 13: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer14"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 14 Open"
+            android:layout_weight="1"
+            android:text="Table 14: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer15"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 15 Open"
+            android:layout_weight="1"
+            android:text="Table 15: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer16"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 16 Open"
+            android:layout_weight="1"
+            android:text="Table 16: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer17"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 17 Open"
+            android:layout_weight="1"
+            android:text="Table 17: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer18"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 18 Open"
+            android:layout_weight="1"
+            android:text="Table 18: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer19"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 19 Open"
+            android:layout_weight="1"
+            android:text="Table 19: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Timer20"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table 20 Open"
+            android:layout_weight="1"
+            android:text="Table 20: Empty"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="11sp" />
 
