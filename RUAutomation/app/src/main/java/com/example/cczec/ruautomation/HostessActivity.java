@@ -35,18 +35,21 @@ import java.util.Calendar;
 
 public class HostessActivity extends AppCompatActivity {
 
-    private int table1,table2,table3,table4,table5,table6,table7,
-            table8,table9,table10,table11,table12,table13,table14,
-            table15,table16,table17,table18,table19,table20 = 0;
-
-
 
     Handler handler = new Handler();
-    int delay = 6000; //milliseconds
+    int delay = 2000; //milliseconds
 
-    int time1 = 0;
+    int time1,time2,time3,time4,time5,time6,time7,time8,time9,time10,
+            time11,time12,time13,time14,time15,time16,time17,time18,
+            time19,time20 = 0;
 
-    int taken1 = 0;
+    int taken1,taken2,taken3,taken4,taken5,taken6,taken7,taken8,taken9,
+            taken10,taken11,taken12,taken13,taken14,taken15,
+            taken16,taken17,taken18,taken19,taken20 = 0;
+
+    public int totalAvg = 0;
+    public int totalTaken = 0;
+    public int totalAvgTotal = 0;
 
 
     @Override
@@ -101,25 +104,26 @@ public class HostessActivity extends AppCompatActivity {
         final DatabaseReference t20Ref = database.getReferenceFromUrl("https://ruautomation-918ed.firebaseio.com/TableNumber/20");
 
         final TextView timer1 = findViewById(R.id.Timer1);
-        TextView timer2 = findViewById(R.id.Timer2);
-        TextView timer3 = findViewById(R.id.Timer3);
-        TextView timer4 = findViewById(R.id.Timer4);
-        TextView timer5 = findViewById(R.id.Timer5);
-        TextView timer6 = findViewById(R.id.Timer6);
-        TextView timer7 = findViewById(R.id.Timer7);
-        TextView timer8 = findViewById(R.id.Timer8);
-        TextView timer9 = findViewById(R.id.Timer9);
-        TextView timer10 = findViewById(R.id.Timer10);
-        TextView timer11 = findViewById(R.id.Timer11);
-        TextView timer12 = findViewById(R.id.Timer12);
-        TextView timer13 = findViewById(R.id.Timer13);
-        TextView timer14 = findViewById(R.id.Timer14);
-        TextView timer15 = findViewById(R.id.Timer15);
-        TextView timer16 = findViewById(R.id.Timer16);
-        TextView timer17 = findViewById(R.id.Timer17);
-        TextView timer18 = findViewById(R.id.Timer18);
-        TextView timer19 = findViewById(R.id.Timer19);
-        TextView timer20 = findViewById(R.id.Timer20);
+        final TextView timer2 = findViewById(R.id.Timer2);
+        final TextView timer3 = findViewById(R.id.Timer3);
+        final TextView timer4 = findViewById(R.id.Timer4);
+        final TextView timer5 = findViewById(R.id.Timer5);
+        final TextView timer6 = findViewById(R.id.Timer6);
+        final TextView timer7 = findViewById(R.id.Timer7);
+        final TextView timer8 = findViewById(R.id.Timer8);
+        final TextView timer9 = findViewById(R.id.Timer9);
+        final TextView timer10 = findViewById(R.id.Timer10);
+        final TextView timer11 = findViewById(R.id.Timer11);
+        final TextView timer12 = findViewById(R.id.Timer12);
+        final TextView timer13 = findViewById(R.id.Timer13);
+        final TextView timer14 = findViewById(R.id.Timer14);
+        final TextView timer15 = findViewById(R.id.Timer15);
+        final TextView timer16 = findViewById(R.id.Timer16);
+        final TextView timer17 = findViewById(R.id.Timer17);
+        final TextView timer18 = findViewById(R.id.Timer18);
+        final TextView timer20 = findViewById(R.id.Timer20);
+
+        final   TextView avg =  findViewById(R.id.avgWaitTime);
 
 
         handler.postDelayed(new Runnable() {
@@ -128,12 +132,26 @@ public class HostessActivity extends AppCompatActivity {
                     time1++;
                     timer1.setText("Table 1 Time: " + time1);
                 }
+                if(taken2 == 1) {
+                    time2++;
+                    timer2.setText("Table 2 Time: " + time2);
+                }
+                if(taken3 == 1) {
+                    time3++;
+                    timer3.setText("Table 3 Time: " + time3);
+                }
+                if(taken4 == 1) {
+                    time4++;
+                    timer4.setText("Table 4 Time: " + time4);
+                }
                 handler.postDelayed(this, delay);
             }}, delay);
 
 
 
-
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~TABLE 1~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         t1Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -169,7 +187,11 @@ public class HostessActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             tableRef.child("1").setValue("Cleaning");
-                            timer1.setText("Needs Cleaning");
+                            timer1.setText("Table 1: Needs Cleaning");
+                            totalTaken++;
+                            totalAvgTotal = totalAvgTotal + time1;
+                            totalAvg = totalAvgTotal/totalTaken;
+                            avg.setText("Avg Wait: " + totalAvg + "min");
                             taken1 = 0;
                             time1 = 0;
                         }
@@ -179,6 +201,186 @@ public class HostessActivity extends AppCompatActivity {
                     tableNumber1.setBackgroundColor(Color.WHITE);
                     tableNumber1.setTextColor(Color.BLACK);
                     tableRef.child("1").setValue("Table 1: Empty");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~TABLE 2~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        t2Ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value =  dataSnapshot.getValue(String.class);
+                tableNumber2.setText("Table 2: " + value);
+                if(value.equals("Cleaning")){
+                    tableNumber2.setBackgroundColor(Color.YELLOW);
+                    tableNumber2.setTextColor(Color.BLACK);
+                    tableNumber2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("2").setValue("Empty");
+                            timer2.setText("Table 2: Empty");
+                        }
+                    });
+                }
+                else if(value.equals("Empty")){
+                    tableNumber2.setBackgroundColor(Color.WHITE);
+                    tableNumber2.setTextColor(Color.BLACK);
+                    tableNumber2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("2").setValue("Taken");
+                            taken2 = 1;
+                        }
+                    });
+                }
+                else if(value.equals("Taken")){
+                    tableNumber2.setBackgroundColor(Color.BLACK);
+                    tableNumber2.setTextColor(Color.WHITE);
+
+                    tableNumber2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("2").setValue("Cleaning");
+                            timer2.setText("Table 2: Needs Cleaning");
+                            totalTaken++;
+                            totalAvgTotal = totalAvgTotal + time2;
+                            totalAvg = totalAvgTotal/totalTaken;
+                            avg.setText("Avg Wait: " + totalAvg + "min");
+                            taken2 = 0;
+                            time2 = 0;
+                        }
+                    });
+                }
+                else{
+                    tableNumber2.setBackgroundColor(Color.WHITE);
+                    tableNumber2.setTextColor(Color.BLACK);
+                    tableRef.child("2").setValue("Table 2: Empty");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~TABLE 3~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        t3Ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value =  dataSnapshot.getValue(String.class);
+                tableNumber3.setText("Table 3: " + value);
+                if(value.equals("Cleaning")){
+                    tableNumber3.setBackgroundColor(Color.YELLOW);
+                    tableNumber3.setTextColor(Color.BLACK);
+                    tableNumber3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("3").setValue("Empty");
+                            timer3.setText("Table 3: Empty");
+                        }
+                    });
+                }
+                else if(value.equals("Empty")){
+                    tableNumber3.setBackgroundColor(Color.WHITE);
+                    tableNumber3.setTextColor(Color.BLACK);
+                    tableNumber3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("3").setValue("Taken");
+                            taken3 = 1;
+                        }
+                    });
+                }
+                else if(value.equals("Taken")){
+                    tableNumber3.setBackgroundColor(Color.BLACK);
+                    tableNumber3.setTextColor(Color.WHITE);
+
+                    tableNumber3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("3").setValue("Cleaning");
+                            timer3.setText("Table 3: Needs Cleaning");
+                            totalTaken++;
+                            totalAvgTotal = totalAvgTotal + time3;
+                            totalAvg = totalAvgTotal/totalTaken;
+                            avg.setText("Avg Wait: " + totalAvg + "min");
+                            taken3 = 0;
+                            time3 = 0;
+                        }
+                    });
+                }
+                else{
+                    tableNumber3.setBackgroundColor(Color.WHITE);
+                    tableNumber3.setTextColor(Color.BLACK);
+                    tableRef.child("3").setValue("Table 3: Empty");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~TABLE 4~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        t4Ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value =  dataSnapshot.getValue(String.class);
+                tableNumber4.setText("Table 4: " + value);
+                if(value.equals("Cleaning")){
+                    tableNumber4.setBackgroundColor(Color.YELLOW);
+                    tableNumber4.setTextColor(Color.BLACK);
+                    tableNumber4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("4").setValue("Empty");
+                            timer4.setText("Table 4: Empty");
+                        }
+                    });
+                }
+                else if(value.equals("Empty")){
+                    tableNumber4.setBackgroundColor(Color.WHITE);
+                    tableNumber4.setTextColor(Color.BLACK);
+                    tableNumber4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("4").setValue("Taken");
+                            taken4 = 1;
+                        }
+                    });
+                }
+                else if(value.equals("Taken")){
+                    tableNumber4.setBackgroundColor(Color.BLACK);
+                    tableNumber4.setTextColor(Color.WHITE);
+
+                    tableNumber4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tableRef.child("4").setValue("Cleaning");
+                            timer4.setText("Table 4: Needs Cleaning");
+                            totalTaken++;
+                            totalAvgTotal = totalAvgTotal + time4;
+                            totalAvg = totalAvgTotal/totalTaken;
+                            avg.setText("Avg Wait: " + totalAvg + "min");
+                            taken4 = 0;
+                            time4 = 0;
+                        }
+                    });
+                }
+                else{
+                    tableNumber4.setBackgroundColor(Color.WHITE);
+                    tableNumber4.setTextColor(Color.BLACK);
+                    tableRef.child("4").setValue("Empty");
                 }
             }
 
