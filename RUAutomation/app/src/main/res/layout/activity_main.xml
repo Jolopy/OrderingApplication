@@ -129,6 +129,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -138,6 +139,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -147,6 +149,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -166,6 +169,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -175,6 +179,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -184,6 +189,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -193,6 +199,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -202,6 +209,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
     </LinearLayout>
@@ -219,6 +227,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -228,6 +237,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -237,6 +247,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -246,6 +257,7 @@
             android:layout_height="13dp"
             android:layout_gravity="left"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="@string/actual_order"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 

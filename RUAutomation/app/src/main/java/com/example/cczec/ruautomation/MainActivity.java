@@ -113,6 +113,25 @@ public class MainActivity extends AppCompatActivity {
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                count1++;
                orderReview1.setText(str1 + Integer.toString(count1));
+               //Minus Item
+               if(count1 >= 1){
+                   orderReview1.setOnClickListener(new View.OnClickListener() {
+                       DecimalFormat df = new DecimalFormat("0.00");
+                       @Override
+                       public void onClick(View view) {
+                           if(count1 > 0) {
+                               count1--;
+                               orderReview1.setText(str1 + Integer.toString(count1));
+                               total_price = total_price - price1;
+                           }
+                           textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                           if(count1 == 0)
+                           {
+                               orderReview1.setText("");
+                           }
+                       }
+                   });
+               }
             }
         });
 

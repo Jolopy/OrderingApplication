@@ -34,7 +34,6 @@ public class BusboyActivity extends AppCompatActivity {
         textViewTables3 = findViewById(R.id.textViewTables3);
         textViewTables4 = findViewById(R.id.textViewTables4);
         textViewTables5 = findViewById(R.id.textViewTables5);
-
         textViewTables6 = findViewById(R.id.textViewTables6);
         textViewTables7 = findViewById(R.id.textViewTables7);
         textViewTables8 = findViewById(R.id.textViewTables8);
