@@ -143,6 +143,25 @@ public class MainActivity extends AppCompatActivity {
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                count2++;
                orderReview2.setText(str2 +  Integer.toString(count2));
+                //Minus Item
+                if(count2 >= 1){
+                    orderReview2.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count2 > 0) {
+                                count2--;
+                                orderReview2.setText(str2 + Integer.toString(count2));
+                                total_price = total_price - price2;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count2 == 0)
+                            {
+                                orderReview2.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -154,6 +173,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count3++;
                 orderReview3.setText(str3 + Integer.toString(count3));
+                //Minus Item
+                if(count3 >= 1){
+                    orderReview3.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count3 > 0) {
+                                count3--;
+                                orderReview3.setText(str3 + Integer.toString(count3));
+                                total_price = total_price - price3;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count3 == 0)
+                            {
+                                orderReview3.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -165,6 +203,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count4++;
                 orderReview4.setText(str4 + Integer.toString(count4));
+                //Minus Item
+                if(count4 >= 1){
+                    orderReview4.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count4 > 0) {
+                                count4--;
+                                orderReview4.setText(str4 + Integer.toString(count4));
+                                total_price = total_price - price4;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count4 == 0)
+                            {
+                                orderReview4.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
         //##########################################################################################
@@ -178,6 +235,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count5++;
                 orderReview5.setText(str5 + Integer.toString(count5));
+                //Minus Item
+                if(count5 >= 1){
+                    orderReview5.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count5 > 0) {
+                                count5--;
+                                orderReview5.setText(str5 + Integer.toString(count5));
+                                total_price = total_price - price5;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count5 == 0)
+                            {
+                                orderReview5.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -189,6 +265,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count6++;
                 orderReview6.setText(str6 + Integer.toString(count6));
+                //Minus Item
+                if(count6 >= 1){
+                    orderReview6.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count6 > 0) {
+                                count6--;
+                                orderReview6.setText(str6 + Integer.toString(count6));
+                                total_price = total_price - price6;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count6 == 0)
+                            {
+                                orderReview6.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -200,6 +295,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count7++;
                 orderReview7.setText(str7 + Integer.toString(count7));
+                //Minus Item
+                if(count7 >= 1){
+                    orderReview7.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count7 > 0) {
+                                count7--;
+                                orderReview7.setText(str7 + Integer.toString(count7));
+                                total_price = total_price - price7;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count7 == 0)
+                            {
+                                orderReview7.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -211,6 +325,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count8++;
                 orderReview8.setText(str8 + Integer.toString(count8));
+                //Minus Item
+                if(count8 >= 1){
+                    orderReview8.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count8 > 0) {
+                                count8--;
+                                orderReview8.setText(str8 + Integer.toString(count8));
+                                total_price = total_price - price8;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count8 == 0)
+                            {
+                                orderReview8.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
         //##########################################################################################
@@ -224,6 +357,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count9++;
                 orderReview9.setText(str9 + Integer.toString(count9));
+                //Minus Item
+                if(count9 >= 1){
+                    orderReview9.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count9 > 0) {
+                                count9--;
+                                orderReview9.setText(str9 + Integer.toString(count9));
+                                total_price = total_price - price9;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count9 == 0)
+                            {
+                                orderReview9.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -235,6 +387,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count10++;
                 orderReview10.setText(str10 + Integer.toString(count10));
+                //Minus Item
+                if(count10 >= 1){
+                    orderReview10.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count10 > 0) {
+                                count10--;
+                                orderReview10.setText(str10 + Integer.toString(count10));
+                                total_price = total_price - price10;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count10 == 0)
+                            {
+                                orderReview10.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -246,6 +417,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count11++;
                 orderReview11.setText(str11 + Integer.toString(count11));
+                //Minus Item
+                if(count11 >= 1){
+                    orderReview11.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count11 > 0) {
+                                count11--;
+                                orderReview11.setText(str11 + Integer.toString(count11));
+                                total_price = total_price - price11;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count11 == 0)
+                            {
+                                orderReview11.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -257,6 +447,25 @@ public class MainActivity extends AppCompatActivity {
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count12++;
                 orderReview12.setText(str12 + Integer.toString(count12));
+                //Minus Item
+                if(count12 >= 1){
+                    orderReview12.setOnClickListener(new View.OnClickListener() {
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        @Override
+                        public void onClick(View view) {
+                            if(count12 > 0) {
+                                count12--;
+                                orderReview12.setText(str12 + Integer.toString(count12));
+                                total_price = total_price - price12;
+                            }
+                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+                            if(count12 == 0)
+                            {
+                                orderReview12.setText("");
+                            }
+                        }
+                    });
+                }
             }
         });
 
