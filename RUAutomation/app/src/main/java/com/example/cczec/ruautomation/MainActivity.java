@@ -1,5 +1,6 @@
 package com.example.cczec.ruautomation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -542,12 +543,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //##########################################################################################
+        //PAY Button
+        //##########################################################################################
+
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DecimalFormat df = new DecimalFormat("0.00");
                 total_price = 0;
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
+
+                startActivity(new Intent(MainActivity.this,PayPopUpActivity.class));
 
                 orderReview1.setText("");
                 orderReview2.setText("");
