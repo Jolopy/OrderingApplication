@@ -3,10 +3,13 @@
     package="com.example.cczec.ruautomation">
 
     <supports-screens
-        android:smallScreens= "true"
+        android:largeScreens="true"
         android:normalScreens="true"
-        android:largeScreens= "true"
-        android:xlargeScreens="true"/>
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,8 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"
-                    android:screenOrientation="portrait">
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,32 +30,25 @@
         <activity
             android:name=".MainActivity"
             android:label="MenuActivity"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".HostessActivity"
             android:label="HostessActivity"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".BusboyActivity"
             android:label="BusboyActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".WaiterActivity"
             android:label="WaiterActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PayPopUpActivity"
             android:label="PayPopUpActivity"
-            android:theme="@style/AppTheme.PopUp"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.PopUp" />
+        <activity android:name=".ManagerActivity"></activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

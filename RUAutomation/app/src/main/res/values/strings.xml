@@ -50,6 +50,7 @@
     <string name="Manager">Manager</string>
     <string name="Hostess">Hostess</string>
     <string name="Busboy">Busboy</string>
+    <string name="title_activity_manager">ManagerActivity</string>
 
     // Customer Home Screen
 
