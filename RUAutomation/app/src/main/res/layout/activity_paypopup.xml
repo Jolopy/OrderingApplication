@@ -1,46 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dedede">
+    android:background="@android:color/background_light">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:orientation="horizontal">
+
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/paypalButton"
             android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:layout_column="0"
-            android:layout_row="1"
-            android:background="@drawable/paypal"
-            android:layout_gravity="center"
-            android:layout_margin="15dp"/>
-
-        <ImageButton
-            android:id="@+id/imageButton13"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_column="1"
-            android:layout_row="1"
-            android:background="@drawable/credit"
             android:layout_margin="15dp"
-            />
+            android:layout_row="1"
+            android:background="@drawable/paypal" />
 
         <ImageButton
-            android:id="@+id/imageButton14"
+            android:id="@+id/bitcoinButton"
             android:layout_width="150dp"
-            android:layout_height="108dp"
+            android:layout_height="59dp"
             android:layout_column="2"
             android:layout_gravity="center"
             android:layout_margin="15dp"
             android:layout_row="1"
             android:background="@drawable/crypto" />
+
     </LinearLayout>
+
+
 </RelativeLayout>

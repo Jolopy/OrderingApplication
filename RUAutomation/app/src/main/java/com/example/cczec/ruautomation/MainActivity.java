@@ -550,11 +550,12 @@ public class MainActivity extends AppCompatActivity {
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, PayPopUpActivity.class);
+                myIntent.putExtra("total_Price", Double.toString(total_price));
                 DecimalFormat df = new DecimalFormat("0.00");
+                startActivity(myIntent);
                 total_price = 0;
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
-
-                startActivity(new Intent(MainActivity.this,PayPopUpActivity.class));
 
                 orderReview1.setText("");
                 orderReview2.setText("");
@@ -568,8 +569,8 @@ public class MainActivity extends AppCompatActivity {
                 orderReview10.setText("");
                 orderReview11.setText("");
                 orderReview12.setText("");
-                payRef.child(tableNumber.getText().toString()).setValue("Paid");
-                Toast.makeText(getApplicationContext(), "Table number " + tableNumber.getText().toString() + " has Paid!", Toast.LENGTH_SHORT).show();
+                payRef.child(tableNumber.getText().toString()).setValue("Paying");
+                Toast.makeText(getApplicationContext(), "Table number " + tableNumber.getText().toString() + " is Paying!", Toast.LENGTH_SHORT).show();
 
 
             }

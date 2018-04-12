@@ -49,6 +49,19 @@
             android:theme="@style/AppTheme.PopUp"
             android:screenOrientation="landscape">
         </activity>
+        <activity
+            android:name=".BitcoinPayActivity"
+            android:label="PayPopUpActivity"
+            android:theme="@style/AppTheme.PopUp"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name=".PayPalPayActivity"
+            android:label="PayPopUpActivity"
+            android:theme="@style/AppTheme.PopUp"
+            android:screenOrientation="landscape">
+        </activity>
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

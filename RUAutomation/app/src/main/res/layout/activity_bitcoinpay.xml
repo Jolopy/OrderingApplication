@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_column="3"
+    android:layout_row="1">
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/total_price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+            />
+
+        <TextView
+            android:id="@+id/bitcoinTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_price_price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/bitcoinPlus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+ Tip" />
+            <Button
+                android:id="@+id/bitcoinMinus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="- Tip" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bitcoinTipPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tip: 15%"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        <TextView
+            android:id="@+id/bitcoinTipAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0.00"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+        <TextView
+            android:id="@+id/bitcoinFinalPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Final Price:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+            />
+
+        <TextView
+            android:id="@+id/bitcoinFinalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_price_price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+
+        <Button
+            android:id="@+id/bitcoinConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="Confirm" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/bitcoinQRSCAN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Scan Here:"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            />
+
+        <ImageView
+            android:id="@+id/bitcoinQR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bitcoin"
+            />
+
+        <TextView
+            android:id="@+id/bitcoinOrCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Or Copy:"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            />
+        <TextView
+            android:id="@+id/bitcoinAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1HF37iq59D1D6cw2pwm5BYFqiZpYYC4opu"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textIsSelectable="true"/>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
