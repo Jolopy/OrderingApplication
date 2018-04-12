@@ -48,11 +48,11 @@
         android:text="Waiter" />
 
     <Button
-        android:layout_row="5"
-        android:layout_column="0"
-        android:id="@+id/buttonCareerHome"
+        android:id="@+id/buttonManagerHome"
         android:layout_width="match_parent"
+        android:layout_column="0"
+        android:layout_row="5"
         android:layout_rowWeight="1"
-        android:text="@string/Career" />
+        android:text="@string/Manager" />
 
 </GridLayout>
