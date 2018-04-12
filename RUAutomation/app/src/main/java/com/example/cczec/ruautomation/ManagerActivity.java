@@ -38,7 +38,9 @@ public class ManagerActivity extends AppCompatActivity {
         btnThreshold.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                // this onClickListener should take in 1 string representing the ingredient,
+                // and an int represent the threshold and set the value of the threshold to the input value
+                // the button will then set the threshold of the target ingredient to the int value
             }
         });
 
@@ -54,7 +56,9 @@ public class ManagerActivity extends AppCompatActivity {
         btnCheckItem.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                // the onClickListener will take 1 string parameter and return an int value
+                // the string is the name of the ingredient, and the return value is the current level in stock
+                // the button will then call the function to execute
             }
         });
 
@@ -70,7 +74,9 @@ public class ManagerActivity extends AppCompatActivity {
         btnRestock.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                // the onClickListener will take 2 parameters the name of the ingredient and the amount of that ingredient that is ordered
+                // the int value that is ordered will then be added to whatever is there for the new stock amount
+                // the button will execute the function call
             }
         });
 
@@ -82,7 +88,8 @@ public class ManagerActivity extends AppCompatActivity {
         .addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                // the alert field is an EventListener which will be called anytime any of the
+                // ingredient fields have gone below the threshold and return a string indicating the ingredient that is running low
             }
         });
 */
