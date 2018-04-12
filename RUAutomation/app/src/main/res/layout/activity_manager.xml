@@ -21,8 +21,7 @@
             android:layout_row="5"
             android:ems="10"
             android:hint="Item Amount"
-            android:inputType="textPersonName"
-            android:text="Item Amount" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/restockItem"
@@ -32,8 +31,7 @@
             android:layout_row="4"
             android:ems="10"
             android:hint="Restock Item"
-            android:inputType="textPersonName"
-            android:text="Restock Item" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/displayItemAmount"
@@ -43,8 +41,7 @@
             android:layout_row="3"
             android:ems="10"
             android:hint="Return Item Amount"
-            android:inputType="textPersonName"
-            android:text="Return Item Amount" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/getItemAmount"
@@ -54,8 +51,7 @@
             android:layout_row="2"
             android:ems="10"
             android:hint="Check Item"
-            android:inputType="textPersonName"
-            android:text="Check Item" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/thresholdItemAmount"
@@ -65,8 +61,7 @@
             android:layout_row="1"
             android:ems="10"
             android:hint="Item Amount"
-            android:inputType="textPersonName"
-            android:text="Item Amount" />
+            android:inputType="textPersonName" />
 
 
         <EditText
@@ -77,8 +72,7 @@
             android:layout_row="0"
             android:ems="10"
             android:hint="Set Threshold Item"
-            android:inputType="textPersonName"
-            android:text="Set Threshold Item" />
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/btnThreshold"
@@ -112,8 +106,7 @@
             android:layout_row="24"
             android:ems="10"
             android:hint="Alert"
-            android:inputType="textPersonName"
-            android:text="Alert" />
+            android:inputType="textPersonName" />
 
     </GridLayout>
 </android.support.constraint.ConstraintLayout>
