@@ -74,7 +74,7 @@ public class ManagerActivity extends AppCompatActivity {
                 // the button will then call the function to execute
                 String strGetItemAmount = getItemAmount.getText().toString();
 
-                refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strGetItemAmount);
+                refCurrentLevel = FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strGetItemAmount);
                 refCurrentLevel.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -110,12 +110,10 @@ public class ManagerActivity extends AppCompatActivity {
                 String strRestockItem = restockItem.getText().toString();
                 final int intRestockItemAmount = Integer.parseInt(restockItemAmount.getText().toString());
                 refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strRestockItem);
-                refCurrentLevel.addValueEventListener(new ValueEventListener() {
+                refCurrentLevel.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        // this code causes an endless loop but it works :)
-                        //refCurrentLevel.setValue(Integer.parseInt(dataSnapshot.getValue().toString()) + intRestockItemAmount);
-
+                        refCurrentLevel.setValue(Integer.parseInt(dataSnapshot.getValue().toString()) + intRestockItemAmount);
                     }
 
                     @Override
