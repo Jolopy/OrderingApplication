@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -16,6 +17,8 @@ public class ManagerActivity extends AppCompatActivity {
     // FirebaseDatabase declerations
     private DatabaseReference refCurrentLevel;
     private DatabaseReference refThresholdLevel;
+
+    private DataSnapshot snapCurrentLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,7 @@ public class ManagerActivity extends AppCompatActivity {
 
                 String strSetThresholdItem = setThresholdItem.getText().toString();
                 String strThresholdItemAmount = thresholdItemAmount.getText().toString();
-                int intThresholdItemAmount = Integer.parseInt(thresholdItemAmount.getText().toString());
+                //int intThresholdItemAmount = Integer.parseInt(thresholdItemAmount.getText().toString());
                 refThresholdLevel =  FirebaseDatabase.getInstance().getReference().child(threshold_level + "/" + strSetThresholdItem);
                 refThresholdLevel.setValue(strThresholdItemAmount);
 
@@ -70,9 +73,21 @@ public class ManagerActivity extends AppCompatActivity {
                 // the string is the name of the ingredient, and the return value is the current level in stock
                 // the button will then call the function to execute
                 String strGetItemAmount = getItemAmount.getText().toString();
-                refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strGetItemAmount);
 
-                displayItemAmount.setText(refCurrentLevel.getKey().toString());
+                refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strGetItemAmount);
+                refCurrentLevel.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        displayItemAmount.setText(dataSnapshot.getValue().toString());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        displayItemAmount.setText(" ");
+                    }
+                });
+                //snapCurrentLevel = DataSnapshot();
+                //displayItemAmount.setText(refCurrentLevel.getKey().toString());
             }
         });
 
@@ -80,8 +95,8 @@ public class ManagerActivity extends AppCompatActivity {
         restockItem             - enter the name of the item you want to restock
         restockItemAmount       - enter the number items you want to restock (this is adding to what we already have)
         btnRestock              - press to execute*/
-        TextView restockItem = findViewById(R.id.restockItem);
-        TextView restockItemAmount = findViewById(R.id.restockItemAmount);
+        final TextView restockItem = findViewById(R.id.restockItem);
+        final TextView restockItemAmount = findViewById(R.id.restockItemAmount);
         Button btnRestock = findViewById(R.id.btnRestock);
 
         // Set on click Listener
@@ -91,6 +106,23 @@ public class ManagerActivity extends AppCompatActivity {
                 // the onClickListener will take 2 parameters the name of the ingredient and the amount of that ingredient that is ordered
                 // the int value that is ordered will then be added to whatever is there for the new stock amount
                 // the button will execute the function call
+
+                String strRestockItem = restockItem.getText().toString();
+                final int intRestockItemAmount = Integer.parseInt(restockItemAmount.getText().toString());
+                refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strRestockItem);
+                refCurrentLevel.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // this code causes an endless loop but it works :)
+                        //refCurrentLevel.setValue(Integer.parseInt(dataSnapshot.getValue().toString()) + intRestockItemAmount);
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 
