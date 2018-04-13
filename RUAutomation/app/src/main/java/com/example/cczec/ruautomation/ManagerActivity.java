@@ -125,22 +125,29 @@ public class ManagerActivity extends AppCompatActivity {
                 });
             }
         });
-
         /*
         alertThreshold          - need another field that will be an EventListener to when the stock supply drops below a certain level*/
+        /*
         TextView alertThreshold = findViewById(R.id.alertThreshold);
 
-/*
-        .addValueEventListener(new ValueEventListener() {
+        refThresholdLevel = FirebaseDatabase.getInstance().getReference().child(threshold_level);
+        refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level);
+        refCurrentLevel.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // the alert field is an EventListener which will be called anytime any of the
-                // ingredient fields have gone below the threshold and return a string indicating the ingredient that is running low
+                for (DataSnapshot data : dataSnapshot.getChildren()){
+                    //final int current_value = Integer.parseInt(data.getValue().toString());
+                    //final int threshold_value;
+                }
+            }
 
-                // multiple things can go below at the same time - think how to fix
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
-*/
+        */
+
     }
 
 }
