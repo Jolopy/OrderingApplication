@@ -22,16 +22,19 @@ public class ManagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
 
+        final String current_level = "Inventory/Current Level";
+        final String threshold_level = "Inventory/Threshold";
+
         // FirebaseDatabase reference instantiation
-        refCurrentLevel = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level");
-        refThresholdLevel = FirebaseDatabase.getInstance().getReference().child("Inventory/Threshold");
+        refCurrentLevel = FirebaseDatabase.getInstance().getReference().child(current_level);
+        refThresholdLevel = FirebaseDatabase.getInstance().getReference().child(threshold_level);
 
         /*
         setThresholdItem        - enter the name of the item you want to set a new threshold
         thresholdItemAmount     - enter the number that will be the new threshold
         btnThreshold            - press to execute*/
-        TextView setThresholdItem = findViewById(R.id.setThresholdItem);
-        TextView thresholdItemAmount = findViewById(R.id.thresholdItemAmount);
+        final TextView setThresholdItem = findViewById(R.id.setThresholdItem);
+        final TextView thresholdItemAmount = findViewById(R.id.thresholdItemAmount);
         Button btnThreshold = findViewById(R.id.btnThreshold);
 
         // Set on click Listener
@@ -41,6 +44,13 @@ public class ManagerActivity extends AppCompatActivity {
                 // this onClickListener should take in 1 string representing the ingredient,
                 // and an int represent the threshold and set the value of the threshold to the input value
                 // the button will then set the threshold of the target ingredient to the int value
+
+                String strSetThresholdItem = setThresholdItem.getText().toString();
+                String strThresholdItemAmount = thresholdItemAmount.getText().toString();
+                int intThresholdItemAmount = Integer.parseInt(thresholdItemAmount.getText().toString());
+                refThresholdLevel =  FirebaseDatabase.getInstance().getReference().child(threshold_level + "/" + strSetThresholdItem);
+                refThresholdLevel.setValue(strThresholdItemAmount);
+
             }
         });
 
@@ -48,8 +58,8 @@ public class ManagerActivity extends AppCompatActivity {
         getItemAmount           - enter the name of the item you want to view the supply levels
         displayItemAmount       - this is where the items inventory value should be displayed
         btnCheckItem            - press to execute*/
-        TextView getItemAmount = findViewById(R.id.getItemAmount);
-        TextView displayItemAmount = findViewById(R.id.displayItemAmount);
+        final TextView getItemAmount = findViewById(R.id.getItemAmount);
+        final TextView displayItemAmount = findViewById(R.id.displayItemAmount);
         Button btnCheckItem = findViewById(R.id.btnCheckItem);
 
         // Set on click Listener
@@ -59,6 +69,10 @@ public class ManagerActivity extends AppCompatActivity {
                 // the onClickListener will take 1 string parameter and return an int value
                 // the string is the name of the ingredient, and the return value is the current level in stock
                 // the button will then call the function to execute
+                String strGetItemAmount = getItemAmount.getText().toString();
+                refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strGetItemAmount);
+
+                displayItemAmount.setText(refCurrentLevel.getKey().toString());
             }
         });
 
@@ -90,6 +104,8 @@ public class ManagerActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // the alert field is an EventListener which will be called anytime any of the
                 // ingredient fields have gone below the threshold and return a string indicating the ingredient that is running low
+
+                // multiple things can go below at the same time - think how to fix
             }
         });
 */
