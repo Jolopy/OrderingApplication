@@ -132,17 +132,37 @@ public class ManagerActivity extends AppCompatActivity {
         });
         /*
         alertThreshold          - need another field that will be an EventListener to when the stock supply drops below a certain level*/
-        /*
-        TextView alertThreshold = findViewById(R.id.alertThreshold);
+
+        final TextView alertThreshold = findViewById(R.id.alertThreshold);
 
         refThresholdLevel = FirebaseDatabase.getInstance().getReference().child(threshold_level);
         refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level);
         refCurrentLevel.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot data : dataSnapshot.getChildren()){
+                for (final DataSnapshot data : dataSnapshot.getChildren()){
                     //final int current_value = Integer.parseInt(data.getValue().toString());
                     //final int threshold_value;
+                    final String tempCurrent = data.toString();
+                    final Integer tempCurrentValue = Integer.parseInt(data.getValue().toString());
+                    refThresholdLevel = FirebaseDatabase.getInstance().getReference().child(threshold_level + "/" + tempCurrent);
+                    /*
+                    refThresholdLevel.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (tempCurrentValue < Integer.parseInt(dataSnapshot.getValue().toString())){
+                                alertThreshold.setText(dataSnapshot.getKey() + " is running low");
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+
+                    });
+                    */
                 }
             }
 
@@ -151,7 +171,7 @@ public class ManagerActivity extends AppCompatActivity {
 
             }
         });
-        */
+
 
     }
 

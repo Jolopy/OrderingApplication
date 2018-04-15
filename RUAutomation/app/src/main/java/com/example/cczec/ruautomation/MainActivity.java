@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView orderReview12;
 
     public String str1 = "Coffee: ",str2 = "Caesar Salad: ",str3 = "Tom w Mutz: ",
-            str4 = "Pumpkin Pie: ",str5 = "Royal Burger: ",str6 = "Chicken Wrap: ",str7 = "Bacon Potatos: ",
-            str8 = "Choclate Cake: ",str9 = "Grilled Salmon: ",str10 = "Spaghetti: ",str11 = "Pork Chops: ",
+            str4 = "Pumpkin Pie: ",str5 = "Royal Burger: ",str6 = "Chicken Wrap: ",str7 = "Bacon Potatoes: ",
+            str8 = "Chocolate Cake: ",str9 = "Grilled Salmon: ",str10 = "Spaghetti: ",str11 = "Pork Chops: ",
             str12 = "Hot Fudge ";
 
     //Constants
@@ -576,7 +576,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnCallWaiter = findViewById(R.id.callWaiter);
+        final String strCallWaiter = "Call Waiter";
+        final TextView strTableNumber = findViewById(R.id.tableNumber);
 
+
+        btnCallWaiter.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                final DatabaseReference refCallWaiter = FirebaseDatabase.getInstance().getReference().child(strCallWaiter).child("Table " + strTableNumber.getText().toString());
+                refCallWaiter.setValue("True");
+            }
+        });
 
 
     }
