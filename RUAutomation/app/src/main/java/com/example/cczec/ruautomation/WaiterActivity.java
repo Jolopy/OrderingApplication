@@ -19,11 +19,13 @@ import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 
 public class WaiterActivity extends AppCompatActivity {
 
     private TextView orderReadyFB;
+    private TextView tableReadyFB;
     private DatabaseReference mDatabaseFB;
     EditText orderNum;
     ArrayList<String> tables = new ArrayList<String>();
@@ -37,6 +39,7 @@ public class WaiterActivity extends AppCompatActivity {
         orderNum = findViewById(R.id.orderNum);
         mDatabaseFB = FirebaseDatabase.getInstance().getReference().child("OrderReady");
         orderReadyFB = findViewById(R.id.orderReady);
+        tableReadyFB = findViewById(R.id.tableReady);
 
         mDatabaseFB.addValueEventListener(new ValueEventListener() {
             @Override

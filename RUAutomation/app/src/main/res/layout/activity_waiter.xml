@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="ContentDescription"
-    tools:context="com.example.cczec.ruautomation.WaiterActivity">
+    tools:context="com.example.cczec.ruautomation.WaiterActivity"
+    tools:ignore="ContentDescription">
 
     <TextView
         android:id="@+id/orderReady"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Order Ready:"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="158dp" />
 
     <Button
         android:id="@+id/confirmBtn"
@@ -31,24 +23,61 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
         android:text="Confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orderReady" />
+        tools:layout_editor_absoluteY="474dp" />
 
     <EditText
         android:id="@+id/orderNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Enter Order Number"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/confirmBtn"
+        tools:layout_editor_absoluteX="85dp" />
+
+    <EditText
+        android:id="@+id/colTitle1"
+        android:layout_width="157dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-smallcaps"
+        android:inputType="textPersonName"
+        android:text="Table Number"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Compat.Notification.Title"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmBtn" />
+        tools:layout_editor_absoluteY="79dp" />
+
+    <EditText
+        android:id="@+id/colTitle2"
+        android:layout_width="172dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-smallcaps"
+        android:inputType="none"
+        android:text="Order Number"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Title"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <TextView
+        android:id="@+id/tableReady"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Table Ready:"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="158dp" />
 
 </android.support.constraint.ConstraintLayout>
