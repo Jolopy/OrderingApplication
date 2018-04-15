@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
+        Button buttonChefHome = findViewById(R.id.ChefHome);
         Button buttonCustomerHome = findViewById(R.id.buttonCustomerHome);
         Button buttonHostessHome  = findViewById(R.id.HostessHome);
         Button buttonBusboyHome  = findViewById(R.id.BusboyHome);
@@ -37,6 +37,15 @@ public class HomeActivity extends AppCompatActivity {
         * Button employeeHome = findViewById(R.id.buttonEmployeeHome);
         * Button customerHome = findViewById(R.id.buttonCustomerHome);
         * Button careerHome   = findViewById(R.id.buttonCareerHome);
+        */
+
+        /*
+        buttonChefHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ChefActivity.class));
+            }
+        });
         */
 
         buttonCustomerHome.setOnClickListener(new View.OnClickListener() {
