@@ -11,40 +11,51 @@
         android:id="@+id/orderReady"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
         android:text="Order Ready:"
         android:textAlignment="center"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="158dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/colTitle1"
+        app:layout_constraintTop_toBottomOf="@+id/colTitle2" />
 
     <Button
         android:id="@+id/confirmBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="400dp"
         android:text="Confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="474dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/orderNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Enter Order Number"
         android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/confirmBtn"
-        tools:layout_editor_absoluteX="85dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/colTitle1"
-        android:layout_width="157dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:inputType="textPersonName"
@@ -54,13 +65,15 @@
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="79dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/colTitle2"
-        android:layout_width="172dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:inputType="none"
@@ -69,15 +82,44 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Notification.Title"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="74dp" />
+        app:layout_constraintStart_toEndOf="@+id/colTitle1"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tableReady"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
         android:text="Table Ready:"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="158dp" />
+        app:layout_constraintEnd_toStartOf="@+id/colTitle2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colTitle1" />
+
+    <EditText
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Waiter Needed"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/servedBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/servedBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:text="BTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

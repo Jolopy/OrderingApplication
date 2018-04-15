@@ -1,5 +1,6 @@
 package com.example.cczec.ruautomation;
 
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,9 +28,11 @@ public class WaiterActivity extends AppCompatActivity {
     private TextView orderReadyFB;
     private TextView tableReadyFB;
     private DatabaseReference mDatabaseFB;
+    private DatabaseReference mCallWaiter;
     EditText orderNum;
     ArrayList<String> tables = new ArrayList<String>();
     ArrayList<String> orders = new ArrayList<String>();
+    ArrayList<String> notify = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +46,6 @@ public class WaiterActivity extends AppCompatActivity {
 
         mDatabaseFB.addValueEventListener(new ValueEventListener() {
             @Override
-
             public void onDataChange(DataSnapshot dataSnapshot) {
                 tables.clear(); // Avoids appending already existing list
                 orders.clear();
@@ -68,6 +70,47 @@ public class WaiterActivity extends AppCompatActivity {
                 DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/Order " + orderNum.getText().toString());
                 order.removeValue();
                 Toast.makeText(getApplicationContext(), "Order was served!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        final TextView strNotification = findViewById(R.id.notification);
+        final String tempString = "Call Waiter";
+        mCallWaiter = FirebaseDatabase.getInstance().getReference().child(tempString);
+
+        mCallWaiter.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                notify.clear();
+                for (DataSnapshot data : dataSnapshot.getChildren()){
+                    if (data.getValue().toString().equals("True")){
+                        notify.add(data.getKey().toString());
+                        //strNotification.setText(data.getKey().toString());
+                    }
+                }
+                if (notify.size() == 0){
+                    strNotification.setText("Not needed");
+                }
+                else if (notify.size() == 1) {
+                    strNotification.setText(notify.toString());
+                }
+                else {
+                    strNotification.setText("Needed at : " + notify);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        Button servedBtn = findViewById(R.id.servedBtn);
+        servedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String tempString = "Call Waiter" + "/" + strNotification.getText().toString();
+                DatabaseReference mConfirmNotification = FirebaseDatabase.getInstance().getReference().child(tempString);
+                mConfirmNotification.setValue("False");
             }
         });
     }
