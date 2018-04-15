@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,6 +55,7 @@ public class ManagerActivity extends AppCompatActivity {
                 refThresholdLevel =  FirebaseDatabase.getInstance().getReference().child(threshold_level + "/" + strSetThresholdItem);
                 refThresholdLevel.setValue(strThresholdItemAmount);
 
+                Toast.makeText(getApplicationContext(), "Threshold Set!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -73,6 +75,8 @@ public class ManagerActivity extends AppCompatActivity {
                 // the string is the name of the ingredient, and the return value is the current level in stock
                 // the button will then call the function to execute
                 String strGetItemAmount = getItemAmount.getText().toString();
+
+                Toast.makeText(getApplicationContext(), "Inventory Status!", Toast.LENGTH_SHORT).show();
 
                 refCurrentLevel = FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strGetItemAmount);
                 refCurrentLevel.addValueEventListener(new ValueEventListener() {
@@ -109,6 +113,9 @@ public class ManagerActivity extends AppCompatActivity {
 
                 String strRestockItem = restockItem.getText().toString();
                 final int intRestockItemAmount = Integer.parseInt(restockItemAmount.getText().toString());
+
+                Toast.makeText(getApplicationContext(), "Restock Success!", Toast.LENGTH_SHORT).show();
+
                 refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level + "/" + strRestockItem);
                 refCurrentLevel.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -149,7 +156,3 @@ public class ManagerActivity extends AppCompatActivity {
     }
 
 }
-
-
-
-

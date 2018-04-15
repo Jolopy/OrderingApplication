@@ -17,7 +17,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class WaiterActivity extends AppCompatActivity {
 
@@ -25,6 +27,7 @@ public class WaiterActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseFB;
     EditText orderNum;
     ArrayList<String> tables = new ArrayList<String>();
+    ArrayList<String> orders = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +36,21 @@ public class WaiterActivity extends AppCompatActivity {
 
         orderNum = findViewById(R.id.orderNum);
         mDatabaseFB = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-        orderReadyFB = (TextView) findViewById(R.id.orderReady);
+        orderReadyFB = findViewById(R.id.orderReady);
 
         mDatabaseFB.addValueEventListener(new ValueEventListener() {
             @Override
 
             public void onDataChange(DataSnapshot dataSnapshot) {
                 tables.clear(); // Avoids appending already existing list
+                orders.clear();
                 for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
                     tables.add(childSnapshot.getValue().toString());
+                    orders.add(childSnapshot.getKey().toString().substring(6));
                 }
 
                 //String orderReady = dataSnapshot.getValue().toString();
-                orderReadyFB.setText("Orders READY for Table Numbers : " + tables);
+                orderReadyFB.setText("Orders READY : \n" + "Order Number : " + orders + "\n" + "Table Number : " + tables);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -59,10 +64,8 @@ public class WaiterActivity extends AppCompatActivity {
             public void onClick(View view){
                 DatabaseReference order = FirebaseDatabase.getInstance().getReference().child("OrderReady/Order " + orderNum.getText().toString());
                 order.removeValue();
-                Toast.makeText(getApplicationContext(), "You Clicked Confirm!", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(getApplicationContext(), "Order was served!", Toast.LENGTH_SHORT).show();
             }
         });
-        //("https://ruautomation-918ed.firebaseio.com/TableNumber/1");
     }
 }
