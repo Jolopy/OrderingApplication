@@ -32,21 +32,14 @@ public class HomeActivity extends AppCompatActivity {
         Button buttonBusboyHome  = findViewById(R.id.BusboyHome);
         Button buttonWaiterHome  = findViewById(R.id.buttonWaiterHome);
         Button buttonManagerHome = findViewById(R.id.buttonManagerHome);
-        //Button chefButton = findViewById(R.id.buttonChef);
-        /*
-        * Button employeeHome = findViewById(R.id.buttonEmployeeHome);
-        * Button customerHome = findViewById(R.id.buttonCustomerHome);
-        * Button careerHome   = findViewById(R.id.buttonCareerHome);
-        */
 
-        /*
         buttonChefHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, ChefActivity.class));
             }
         });
-        */
+
 
         buttonCustomerHome.setOnClickListener(new View.OnClickListener() {
             @Override

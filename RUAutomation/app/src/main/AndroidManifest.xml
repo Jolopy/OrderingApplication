@@ -46,25 +46,22 @@
         <activity
             android:name=".PayPopUpActivity"
             android:label="PayPopUpActivity"
-            android:theme="@style/AppTheme.PopUp"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.PopUp"></activity>
         <activity
             android:name=".BitcoinPayActivity"
             android:label="PayPopUpActivity"
-            android:theme="@style/AppTheme.PopUp"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.PopUp"></activity>
         <activity
             android:name=".PayPalPayActivity"
             android:label="PayPopUpActivity"
-            android:theme="@style/AppTheme.PopUp"
-            android:screenOrientation="landscape">
-        </activity>
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".ManagerActivity"></activity>
-
+            android:theme="@style/AppTheme.PopUp"></activity>
+        android:screenOrientation="landscape"
+        android:theme="@style/AppTheme.PopUp" />
+        <activity android:name=".ManagerActivity" />
+        <activity android:name=".ChefActivity"></activity>
     </application>
 
 </manifest>
