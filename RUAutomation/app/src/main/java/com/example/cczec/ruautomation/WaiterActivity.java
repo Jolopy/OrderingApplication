@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ListAdapter;
+import android.widget.ArrayAdapter;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,14 +28,19 @@ import java.util.Arrays;
 
 public class WaiterActivity extends AppCompatActivity {
 
-    private TextView orderReadyFB;
-    private TextView tableReadyFB;
     private DatabaseReference mDatabaseFB;
     private DatabaseReference mCallWaiter;
     EditText orderNum;
+    EditText tableTitle;
+    EditText orderTitle;
+    EditText title;
+
     ArrayList<String> tables = new ArrayList<String>();
     ArrayList<String> orders = new ArrayList<String>();
     ArrayList<String> notify = new ArrayList<String>();
+
+    ListView tableListView;
+    ListView orderListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +49,24 @@ public class WaiterActivity extends AppCompatActivity {
 
         orderNum = findViewById(R.id.orderNum);
         mDatabaseFB = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-        orderReadyFB = findViewById(R.id.orderReady);
-        tableReadyFB = findViewById(R.id.tableReady);
+
+        tableTitle = findViewById(R.id.colTitle1);
+        orderTitle = findViewById(R.id.colTitle2);
+        title = findViewById(R.id.myTitle);
+        tableTitle.setFocusable(false);
+        tableTitle.setClickable(false);
+        orderTitle.setFocusable(false);
+        orderTitle.setClickable(false);
+        title.setFocusable(false);
+        title.setClickable(false);
+
+        tableListView = findViewById(R.id.tableListView);
+        orderListView = findViewById(R.id.orderListView);
+
+        final ArrayAdapter<String> tableAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tables);
+        final ArrayAdapter<String> orderAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, orders);
+        tableListView.setAdapter(tableAdapter);
+        orderListView.setAdapter(orderAdapter);
 
         mDatabaseFB.addValueEventListener(new ValueEventListener() {
             @Override
@@ -54,8 +78,11 @@ public class WaiterActivity extends AppCompatActivity {
                     orders.add(childSnapshot.getKey().toString().substring(6));
                 }
 
+                tableAdapter.notifyDataSetChanged();
+                orderAdapter.notifyDataSetChanged();
+
                 //String orderReady = dataSnapshot.getValue().toString();
-                orderReadyFB.setText("Orders READY : \n" + "Order Number : " + orders + "\n" + "Table Number : " + tables);
+                //orderReadyFB.setText("Orders READY : \n" + "Order Number : " + orders + "\n" + "Table Number : " + tables);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
