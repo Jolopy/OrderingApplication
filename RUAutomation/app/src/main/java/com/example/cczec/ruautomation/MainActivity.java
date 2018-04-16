@@ -565,6 +565,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //order_number = order_number + 1;
                 payRef.child(tableNumber.getText().toString()).setValue("Ordered");
+
                 Toast.makeText(getApplicationContext(), "Your order has been placed", Toast.LENGTH_LONG).show();
 
             }
