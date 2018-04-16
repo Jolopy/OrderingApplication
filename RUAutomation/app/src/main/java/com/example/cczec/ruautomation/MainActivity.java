@@ -500,7 +500,9 @@ public class MainActivity extends AppCompatActivity {
                 refCurrentOrder.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        refCurrentOrder.setValue((Integer.parseInt(dataSnapshot.getValue().toString()) + 1));
+                        Integer tempInt = (Integer.parseInt(dataSnapshot.getValue().toString()) + 1);
+                        refCurrentOrder.setValue(tempInt);
+                        order_number = tempInt + 1  ;
                     }
 
                     @Override
@@ -561,7 +563,7 @@ public class MainActivity extends AppCompatActivity {
                     orderNumberRef.child(Integer.toString(order_number)).child(str12).setValue(count12);
                     count12 = 0;
                 }
-                order_number = order_number + 1;
+                //order_number = order_number + 1;
                 payRef.child(tableNumber.getText().toString()).setValue("Ordered");
                 Toast.makeText(getApplicationContext(), "Your order has been placed", Toast.LENGTH_LONG).show();
 
