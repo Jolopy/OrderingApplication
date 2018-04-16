@@ -10,8 +10,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.text.DecimalFormat;
 
 
@@ -478,13 +482,34 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference payRef= database.getReference("TablePayStatus");
 
+        // added
+        final DatabaseReference refCurrentOrder = FirebaseDatabase.getInstance().getReference().child("CurrentOrder");
+
 
         orderButton.setOnClickListener(new View.OnClickListener() {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference orderNumberRef= database.getReference("OrderNumber");
+
+
+
             @Override
             public void onClick(View view) {
                 DecimalFormat df = new DecimalFormat("0.00");
+
+                // added
+                refCurrentOrder.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        refCurrentOrder.setValue((Integer.parseInt(dataSnapshot.getValue().toString()) + 1));
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+                // end added
+
                 orderNumberRef.child(Integer.toString(order_number)).setValue(" ");
                 orderNumberRef.child(Integer.toString(order_number)).child("TableNumber").setValue(tableNumber.getText().toString());
                 orderNumberRef.child(Integer.toString(order_number)).child("Total").setValue(df.format(total_price));
