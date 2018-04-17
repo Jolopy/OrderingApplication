@@ -486,84 +486,69 @@ public class MainActivity extends AppCompatActivity {
         final DatabaseReference refCurrentOrder = FirebaseDatabase.getInstance().getReference().child("CurrentOrder");
 
 
+        refCurrentOrder.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer tempInt = (Integer.parseInt(dataSnapshot.getValue().toString()) + 1);
+                refCurrentOrder.setValue(tempInt);
+                order_number = tempInt;
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        // end added
+
         orderButton.setOnClickListener(new View.OnClickListener() {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference orderNumberRef= database.getReference("OrderNumber");
-
-
 
             @Override
             public void onClick(View view) {
                 DecimalFormat df = new DecimalFormat("0.00");
 
-                // added
-                refCurrentOrder.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Integer tempInt = (Integer.parseInt(dataSnapshot.getValue().toString()) + 1);
-                        refCurrentOrder.setValue(tempInt);
-                        order_number = tempInt + 1  ;
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-                // end added
 
                 orderNumberRef.child(Integer.toString(order_number)).setValue(" ");
                 orderNumberRef.child(Integer.toString(order_number)).child("TableNumber").setValue(tableNumber.getText().toString());
                 orderNumberRef.child(Integer.toString(order_number)).child("Total").setValue(df.format(total_price));
                 if (count1 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str1).setValue(count1);
-                    count1 = 0;
                 }
                 if (count2 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str2).setValue(count2);
-                    count2 = 0;
                 }
                 if (count3 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str3).setValue(count3);
-                    count3 = 0;
                 }
                 if (count4 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str4).setValue(count4);
-                    count4 = 0;
                 }
                 if (count5 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str5).setValue(count5);
-                    count5 = 0;
                 }
                 if (count6 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str6).setValue(count6);
-                    count6 = 0;
                 }
                 if (count7 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str7).setValue(count7);
-                    count7 = 0;
                 }
                 if (count8 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str8).setValue(count8);
-                    count8 = 0;
                 }
                 if (count9 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str9).setValue(count9);
-                    count9 = 0;
                 }
                 if (count10 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str10).setValue(count10);
-                    count10 = 0;
                 }
                 if (count11 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str11).setValue(count11);
-                    count11 = 0;
                 }
                 if (count12 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str12).setValue(count12);
-                    count12 = 0;
                 }
-                //order_number = order_number + 1;
                 payRef.child(tableNumber.getText().toString()).setValue("Ordered");
 
                 Toast.makeText(getApplicationContext(), "Your order has been placed", Toast.LENGTH_LONG).show();
@@ -597,6 +582,19 @@ public class MainActivity extends AppCompatActivity {
                 orderReview10.setText("");
                 orderReview11.setText("");
                 orderReview12.setText("");
+                count1 = 0;
+                count2 = 0;
+                count3 = 0;
+                count4 = 0;
+                count5 = 0;
+                count6 = 0;
+                count7 = 0;
+                count8 = 0;
+                count9 = 0;
+                count10 = 0;
+                count11 = 0;
+                count12 = 0;
+                order_number = order_number + 1;
                 payRef.child(tableNumber.getText().toString()).setValue("Paying");
                 Toast.makeText(getApplicationContext(), "Table number " + tableNumber.getText().toString() + " is Paying!", Toast.LENGTH_SHORT).show();
 
@@ -606,14 +604,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnCallWaiter = findViewById(R.id.callWaiter);
         final String strCallWaiter = "Call Waiter";
-        final TextView strTableNumber = findViewById(R.id.tableNumber);
-
 
         btnCallWaiter.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                final DatabaseReference refCallWaiter = FirebaseDatabase.getInstance().getReference().child(strCallWaiter).child("Table " + strTableNumber.getText().toString());
-                refCallWaiter.setValue("True");
+                final DatabaseReference refCallWaiter = FirebaseDatabase.getInstance().getReference().child(strCallWaiter).child("Table " + tableNumber.getText().toString());
+                refCallWaiter.setValue(" ");
             }
         });
 

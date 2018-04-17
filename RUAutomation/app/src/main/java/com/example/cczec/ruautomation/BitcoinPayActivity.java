@@ -24,7 +24,7 @@ public class BitcoinPayActivity extends Activity{
     private Button minus;
     private Button plus;
     private Button confirm;
-    public double tipPercent  = 15;
+    public double tipPercent  = 15.0;
     public double total_int;
     public double tipTotal;
 
