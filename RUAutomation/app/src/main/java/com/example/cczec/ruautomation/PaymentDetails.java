@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cczec.ruautomation.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,11 +21,15 @@ public class PaymentDetails extends AppCompatActivity {
     TextView detailID,detailAmount,detailStatus;
     Button backMenu;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference payRef= database.getReference("TablePayStatus");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paymentdetails);
+
 
         detailID = (TextView) findViewById(R.id.detailID);
         detailAmount = (TextView) findViewById(R.id.detailAmount);
@@ -31,7 +37,6 @@ public class PaymentDetails extends AppCompatActivity {
         backMenu  = (Button) findViewById(R.id.detailButton);
 
         Intent intent = getIntent();
-
         try {
             JSONObject jsonObject = new JSONObject(intent.getStringExtra("PaymentDetails"));
             showDetails(jsonObject.getJSONObject("response"),intent.getStringExtra("PaymentAmount"));
@@ -59,8 +64,7 @@ public class PaymentDetails extends AppCompatActivity {
         try {
             detailID.setText(response.getString("id"));
             detailStatus.setText(response.getString("state"));
-            detailAmount.setText(response.getString("$"+paymentAmount));
-
+            detailAmount.setText("$" + paymentAmount);
 
         } catch (JSONException e) {
             e.printStackTrace();

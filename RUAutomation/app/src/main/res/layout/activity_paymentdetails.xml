@@ -13,20 +13,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="DetailID"
             android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
 
         <TextView
             android:id="@+id/detailAmount"
             android:layout_width="wrap_content"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DetailAmount"
             android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
 
         <TextView
             android:id="@+id/detailStatus"
             android:layout_width="wrap_content"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Detail Status"
             android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
 
         <Button

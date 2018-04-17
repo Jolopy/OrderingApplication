@@ -151,7 +151,8 @@ public class PayPalPayActivity extends Activity{
                 PaymentConfirmation confirmation =  data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
                 if(confirmation != null){
                     String paymentDetails = confirmation.toJSONObject().toString();
-                    startActivity(new Intent(this, PaymentDetails.class).putExtra("PaymentDetails",paymentDetails).putExtra("PaymentAmount",amount));
+                    String passI = String.valueOf(amount);
+                    startActivity(new Intent(this, PaymentDetails.class).putExtra("PaymentDetails",paymentDetails).putExtra("PaymentAmount",passI));
 
                 }
             }
