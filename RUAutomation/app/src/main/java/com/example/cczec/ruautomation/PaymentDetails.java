@@ -3,6 +3,9 @@ package com.example.cczec.ruautomation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cczec.ruautomation.R;
@@ -14,6 +17,8 @@ public class PaymentDetails extends AppCompatActivity {
 
 
     TextView detailID,detailAmount,detailStatus;
+    Button backMenu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,7 @@ public class PaymentDetails extends AppCompatActivity {
         detailID = (TextView) findViewById(R.id.detailID);
         detailAmount = (TextView) findViewById(R.id.detailAmount);
         detailStatus = (TextView) findViewById(R.id.detailStatus);
+        backMenu  = (Button) findViewById(R.id.detailButton);
 
         Intent intent = getIntent();
 
@@ -33,6 +39,20 @@ public class PaymentDetails extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        backMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(PaymentDetails.this, MainActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(PaymentDetails.this, MainActivity.class);
+        startActivity(myIntent);
     }
 
     private void showDetails(JSONObject response,String paymentAmount){

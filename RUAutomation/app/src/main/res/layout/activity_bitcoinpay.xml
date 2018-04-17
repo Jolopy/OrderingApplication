@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_width="150dp"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_weight="1"
+        >
 
         <TextView
             android:id="@+id/totalPrice"
@@ -94,13 +96,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="10">
         <TextView
             android:id="@+id/bitcoinQRSCAN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Scan Here:"
+            android:text="Scan Here or Copy Code Below:"
             android:layout_gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             />
@@ -113,16 +116,6 @@
             android:layout_weight="1"
             android:background="@drawable/bitcoin"
             />
-
-        <TextView
-            android:id="@+id/bitcoinOrCopy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Or Copy:"
-            android:layout_gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            />
         <TextView
             android:id="@+id/bitcoinAddress"
             android:layout_width="wrap_content"
@@ -131,6 +124,13 @@
             android:text="1HF37iq59D1D6cw2pwm5BYFqiZpYYC4opu"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textIsSelectable="true"/>
+        <Button
+            android:id="@+id/bitcoinButtonBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_light"
+            android:text="Click When Done" />
 
 
 

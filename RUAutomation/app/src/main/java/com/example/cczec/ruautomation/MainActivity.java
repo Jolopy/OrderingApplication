@@ -3,6 +3,7 @@ package com.example.cczec.ruautomation;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -572,6 +573,7 @@ public class MainActivity extends AppCompatActivity {
                 myIntent.putExtra("total_Price", Double.toString(total_price));
                 DecimalFormat df = new DecimalFormat("0.00");
                 startActivity(myIntent);
+                /**
                 total_price = 0;
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
 
@@ -600,7 +602,8 @@ public class MainActivity extends AppCompatActivity {
                 count11 = 0;
                 count12 = 0;
                 order_number = order_number + 1;
-                payRef.child(tableNumber.getText().toString()).setValue("Paying");
+                 **/
+                payRef.child(tableNumber.getText().toString()).setValue("Started Payment");
                 Toast.makeText(getApplicationContext(), "Table number " + tableNumber.getText().toString() + " is Paying!", Toast.LENGTH_SHORT).show();
 
 
@@ -615,10 +618,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final DatabaseReference refCallWaiter = FirebaseDatabase.getInstance().getReference().child(strCallWaiter).child("Table " + tableNumber.getText().toString());
                 refCallWaiter.setValue(" ");
+                Toast.makeText(getApplicationContext(), "Table number " + tableNumber.getText().toString() + " called Waiter!", Toast.LENGTH_SHORT).show();
             }
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(myIntent);
     }
 
     public String getDate() {

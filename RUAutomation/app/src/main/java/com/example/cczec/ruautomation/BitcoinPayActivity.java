@@ -29,9 +29,10 @@ public class BitcoinPayActivity extends Activity{
     public double tipTotal;
 
     private TextView scanhere;
-    private TextView orCopy;
     private TextView address;
     private ImageView qrCode;
+
+    Button bitcoinBack;
 
 
     @Override
@@ -48,9 +49,9 @@ public class BitcoinPayActivity extends Activity{
         confirm = findViewById(R.id.bitcoinConfirm);
 
         scanhere = findViewById(R.id.bitcoinQRSCAN);
-        orCopy = findViewById(R.id.bitcoinOrCopy);
         address = findViewById(R.id.bitcoinAddress);
         qrCode = findViewById(R.id.bitcoinQR);
+        bitcoinBack = (Button)findViewById(R.id.bitcoinButtonBack);
 
 
 
@@ -63,9 +64,10 @@ public class BitcoinPayActivity extends Activity{
         getWindow().setLayout((int)(width * 0.8) ,(int)(height * 0.8));
 
         scanhere.setVisibility(View.INVISIBLE);
-        orCopy.setVisibility(View.INVISIBLE);
         address.setVisibility(View.INVISIBLE);
         qrCode.setVisibility(View.INVISIBLE);
+        bitcoinBack.setVisibility(View.INVISIBLE);
+
 
         String price = getIntent().getStringExtra("total_Price");
 
@@ -111,18 +113,27 @@ public class BitcoinPayActivity extends Activity{
             @Override
             public void onClick(View view) {
                 scanhere.setVisibility(View.VISIBLE);
-                orCopy.setVisibility(View.VISIBLE);
                 address.setVisibility(View.VISIBLE);
                 qrCode.setVisibility(View.VISIBLE);
+                bitcoinBack.setVisibility(View.VISIBLE);
 
             }
         });
 
+        bitcoinBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(BitcoinPayActivity.this, MainActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
 
+    }
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(BitcoinPayActivity.this, MainActivity.class);
+        startActivity(myIntent);
     }
 }

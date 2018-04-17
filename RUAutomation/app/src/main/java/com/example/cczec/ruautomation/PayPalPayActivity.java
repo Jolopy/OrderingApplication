@@ -23,10 +23,12 @@ import org.json.JSONException;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.Random;
 
 public class PayPalPayActivity extends Activity{
 
-    public static final String PAYPAL_CLIENT_ID = "AUeMkHQBX6BbmIimHC_XQ5kWSW3Xk85A2_2iUx7u-IMtWU0FBUC0UqqoVyNtKjjEp3PfmMy7TLJndE4z";
+    public String PAYPAL_CLIENT_ID = "AUeMkHQBX6BbmIimHC_XQ5kWSW3Xk85A2_2iUx7u-IMtWU0FBUC0UqqoVyNtKjjEp3PfmMy7TLJndE4z";
+    public PayPalConfiguration config = new PayPalConfiguration().environment(PayPalConfiguration.ENVIRONMENT_SANDBOX).clientId(Config.PAYPAL_CLIENT_ID).rememberUser(false);
     private TextView textviewTotal;
     private TextView bitcoinTipPercent;
     private TextView getBitcoinTip;
@@ -40,7 +42,6 @@ public class PayPalPayActivity extends Activity{
     public double amount = 0.0;
 
     public static final int PAYPAL_REQUEST_CODE = 7171;
-    private static PayPalConfiguration config = new PayPalConfiguration().environment(PayPalConfiguration.ENVIRONMENT_SANDBOX).clientId(Config.PAYPAL_CLIENT_ID);
 
     @Override
     protected void onDestroy(){
@@ -49,10 +50,17 @@ public class PayPalPayActivity extends Activity{
     }
 
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paypalpay);
+        //Random r = new Random();
+        //int i1 = r.nextInt(100000 - 0) + 0;
+        //PAYPAL_CLIENT_ID = PAYPAL_CLIENT_ID + String.valueOf(i1);
+
+        //PayPalConfiguration config = new PayPalConfiguration().environment(PayPalConfiguration.ENVIRONMENT_SANDBOX).clientId(Config.PAYPAL_CLIENT_ID);
 
         //Payppal shit
         Intent intent =  new Intent(this,PayPalService.class);
@@ -119,7 +127,6 @@ public class PayPalPayActivity extends Activity{
             @Override
             public void onClick(View view) {
                 processPayment();
-
             }
         });
 
