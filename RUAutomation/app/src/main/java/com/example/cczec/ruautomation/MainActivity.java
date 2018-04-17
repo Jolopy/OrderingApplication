@@ -17,6 +17,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -84,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton imageButton11 = findViewById(R.id.imageButton11);
         ImageButton imageButton12 = findViewById(R.id.imageButton12);
 
-        Button orderButton = findViewById(R.id.orderButton);
+        final Button orderButton = findViewById(R.id.orderButton);
         //Button managerButton = findViewById(R.id.callManager);
         //Button waiterButton = findViewById(R.id.callButton);
         Button payButton = findViewById(R.id.payNow);
@@ -513,6 +516,8 @@ public class MainActivity extends AppCompatActivity {
                 orderNumberRef.child(Integer.toString(order_number)).setValue(" ");
                 orderNumberRef.child(Integer.toString(order_number)).child("TableNumber").setValue(tableNumber.getText().toString());
                 orderNumberRef.child(Integer.toString(order_number)).child("Total").setValue(df.format(total_price));
+                orderNumberRef.child(Integer.toString(order_number)).child("Date").setValue(getDate());
+                orderNumberRef.child(Integer.toString(order_number)).child("Time").setValue(getTime());
                 if (count1 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str1).setValue(count1);
                 }
@@ -614,5 +619,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public String getDate() {
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        String formattedDate = dateFormat.format(c);
+
+        return formattedDate;
+    }
+
+    public String getTime() {
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+        String formattedTime = timeFormat.format(c);
+        return formattedTime;
     }
 }
