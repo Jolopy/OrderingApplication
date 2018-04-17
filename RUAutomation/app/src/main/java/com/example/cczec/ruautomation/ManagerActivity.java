@@ -140,20 +140,35 @@ public class ManagerActivity extends AppCompatActivity {
         refCurrentLevel.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (final DataSnapshot data : dataSnapshot.getChildren()){
+                for (final DataSnapshot dataCurrent : dataSnapshot.getChildren()){
                     //final int current_value = Integer.parseInt(data.getValue().toString());
                     //final int threshold_value;
-                    final String tempCurrent = data.toString();
-                    final Integer tempCurrentValue = Integer.parseInt(data.getValue().toString());
+                    final String tempCurrent = dataCurrent.toString();
+                    final Integer tempCurrentValue = Integer.parseInt(dataCurrent.getValue().toString());
                     refThresholdLevel = FirebaseDatabase.getInstance().getReference().child(threshold_level + "/" + tempCurrent);
-                    /*
                     refThresholdLevel.addListenerForSingleValueEvent(new ValueEventListener() {
 
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            if (tempCurrentValue < Integer.parseInt(dataSnapshot.getValue().toString())){
-                                alertThreshold.setText(dataSnapshot.getKey() + " is running low");
-                            }
+                            //final Integer intThresholdLevel = Integer.parseInt(refThresholdLevel.getValue().toString());
+
+                            refThresholdLevel.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    for (final DataSnapshot dataThresh : dataSnapshot.getChildren()){
+                                        if (dataCurrent.toString() == dataThresh.toString() && Integer.parseInt(dataCurrent.getValue().toString()) < Integer.parseInt(dataThresh.getValue().toString())){
+                                            alertThreshold.setText(dataCurrent.getKey() + " is running low");
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+
+
                         }
 
                         @Override
@@ -162,7 +177,7 @@ public class ManagerActivity extends AppCompatActivity {
                         }
 
                     });
-                    */
+
                 }
             }
 
