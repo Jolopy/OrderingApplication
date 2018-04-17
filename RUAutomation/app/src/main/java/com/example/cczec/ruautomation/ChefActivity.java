@@ -86,7 +86,7 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 01").setValue(tableNumber);
-                                    
+
                                 }
                             });
                         }

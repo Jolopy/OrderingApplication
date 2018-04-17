@@ -614,7 +614,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final DatabaseReference refCallWaiter = FirebaseDatabase.getInstance().getReference().child(strCallWaiter).child("Table " + tableNumber.getText().toString());
-                refCallWaiter.setValue(" ");
+                refCallWaiter.setValue("True");
             }
         });
 
