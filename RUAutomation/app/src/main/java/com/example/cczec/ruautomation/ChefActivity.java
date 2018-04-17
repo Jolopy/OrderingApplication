@@ -45,6 +45,7 @@ public class ChefActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseOrd9;
     private Button ord10btn;
     private DatabaseReference mDatabaseOrd10;
+    private DatabaseReference mDatabaseDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 01").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/1");
+                                    mDatabaseDelete.removeValue();
                                     
                                 }
                             });
@@ -125,6 +128,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 02").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/2");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
@@ -163,6 +168,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 03").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/3");
+                                    mDatabaseDelete.removeValue();
 
                                 }
                             });
@@ -202,6 +209,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 04").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/4");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
@@ -240,6 +249,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 05").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/5");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
@@ -278,6 +289,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 06").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/6");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
@@ -316,6 +329,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 07").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/7");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
@@ -354,6 +369,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 08").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/8");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
@@ -392,6 +409,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 09").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/9");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
@@ -430,6 +449,8 @@ public class ChefActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
                                     mDatabaseWrite.child("Order 10").setValue(tableNumber);
+                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/10");
+                                    mDatabaseDelete.removeValue();
                                 }
                             });
                         }
