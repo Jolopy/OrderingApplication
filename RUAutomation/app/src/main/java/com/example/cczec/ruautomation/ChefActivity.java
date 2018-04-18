@@ -6,17 +6,21 @@ package com.example.cczec.ruautomation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class ChefActivity extends AppCompatActivity {
 
@@ -46,6 +50,8 @@ public class ChefActivity extends AppCompatActivity {
     private Button ord10btn;
     private DatabaseReference mDatabaseOrd10;
     private DatabaseReference mDatabaseDelete;
+    ArrayList<String> ordNos = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,36 +76,54 @@ public class ChefActivity extends AppCompatActivity {
         ord1btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/1");
-                mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 0) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(0));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 01").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/1");
-                                    mDatabaseDelete.removeValue();
-                                    
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(0)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(0));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
                                 }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -111,35 +135,54 @@ public class ChefActivity extends AppCompatActivity {
         ord2btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd2 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/2");
-                mDatabaseOrd2.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 1) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(1));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 02").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/2");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(1)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(1));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -151,36 +194,54 @@ public class ChefActivity extends AppCompatActivity {
         ord3btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd3 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/3");
-                mDatabaseOrd3.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 2) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(2));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 03").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/3");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(2)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(2));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
 
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -192,35 +253,54 @@ public class ChefActivity extends AppCompatActivity {
         ord4btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd4 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/4");
-                mDatabaseOrd4.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 3) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(3));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 04").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/4");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(3)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(3));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -232,35 +312,54 @@ public class ChefActivity extends AppCompatActivity {
         ord5btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd5 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/5");
-                mDatabaseOrd5.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 4) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(4));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 05").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/5");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(4)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(4));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -272,35 +371,54 @@ public class ChefActivity extends AppCompatActivity {
         ord6btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd6 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/6");
-                mDatabaseOrd6.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 5) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(5));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 06").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/6");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(5)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(5));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -312,35 +430,54 @@ public class ChefActivity extends AppCompatActivity {
         ord7btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd7 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/7");
-                mDatabaseOrd7.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 6) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(6));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 07").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/7");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(6)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(6));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -352,35 +489,54 @@ public class ChefActivity extends AppCompatActivity {
         ord8btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd8 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/8");
-                mDatabaseOrd8.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 7) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(7));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 08").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/8");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(7)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(7));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -392,35 +548,54 @@ public class ChefActivity extends AppCompatActivity {
         ord9btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd9 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/9");
-                mDatabaseOrd9.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 8) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(8));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 09").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/9");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(8)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(8));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -432,35 +607,54 @@ public class ChefActivity extends AppCompatActivity {
         ord10btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabaseOrd10 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/10");
-                mDatabaseOrd10.addValueEventListener(new ValueEventListener() {
+                ordNos = new ArrayList<>();
+                mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String ordStr = dataSnapshot.getValue().toString();
-                            ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
-                            ordInfo.setText(ordStr);
-                            int ind = ordStr.indexOf("TableNumber");
-                            char tableDig0 = ordStr.charAt(ind+12);
-                            char tableDig1 = ordStr.charAt(ind+13);
-                            final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
-                            orderComplete.setOnClickListener(new View.OnClickListener() {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            ordNos.add(ds.getKey());
+                        }
+                        if (ordNos.size() > 9) {
+                            mDatabaseOrd1 = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(9));
+                            mDatabaseOrd1.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onClick(View v) {
-                                    mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
-                                    mDatabaseWrite.child("Order 10").setValue(tableNumber);
-                                    mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/10");
-                                    mDatabaseDelete.removeValue();
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String ordStr = dataSnapshot.getValue().toString();
+                                        ordStr = ordStr.replaceAll("[{}]", ""); //removes only curly brackets from string
+                                        ordInfo.setText(ordStr);
+                                        int ind = ordStr.indexOf("TableNumber");
+                                        char tableDig0 = ordStr.charAt(ind + 12);
+                                        char tableDig1 = ordStr.charAt(ind + 13);
+                                        final String tableNumber = new StringBuilder().append(tableDig0).append(tableDig1).toString();
+                                        orderComplete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                mDatabaseWrite = FirebaseDatabase.getInstance().getReference().child("OrderReady");
+                                                mDatabaseWrite.child("Order " + ordNos.get(9)).setValue(tableNumber);
+                                                mDatabaseDelete = FirebaseDatabase.getInstance().getReference().child("OrderNumber/" + ordNos.get(9));
+                                                mDatabaseDelete.removeValue();
+                                            }
+                                        });
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
+                                        String errorStr = "Order Not Found";
+                                        ordInfo.setText(errorStr);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Order Not Found", Toast.LENGTH_LONG).show();
-                            String errorStr = "Order Not Found";
-                            ordInfo.setText(errorStr);
+                            Toast.makeText(getApplicationContext(), "Order Queue Empty", Toast.LENGTH_SHORT).show();
+                            String emptyStr = "Order Queue Empty";
+                            ordInfo.setText(emptyStr);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
