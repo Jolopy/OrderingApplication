@@ -513,13 +513,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DecimalFormat df = new DecimalFormat("0.00");
 
-                String status = "Incomplete";
                 orderNumberRef.child(Integer.toString(order_number)).setValue(" ");
                 orderNumberRef.child(Integer.toString(order_number)).child("TableNumber").setValue(tableNumber.getText().toString());
                 orderNumberRef.child(Integer.toString(order_number)).child("Total").setValue(df.format(total_price));
                 orderNumberRef.child(Integer.toString(order_number)).child("Date").setValue(getDate());
                 orderNumberRef.child(Integer.toString(order_number)).child("Time").setValue(getTime());
-                orderNumberRef.child(Integer.toString(order_number)).child("Status").setValue(status);
                 orderNumberRef.child(Integer.toString(order_number)).child("OrderNumber").setValue(order_number);
                 if (count1 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str1).setValue(count1);

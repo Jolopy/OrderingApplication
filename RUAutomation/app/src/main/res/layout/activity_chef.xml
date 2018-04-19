@@ -152,10 +152,10 @@
 
     <Button
         android:id="@+id/orderComplete"
-        android:layout_width="wrap_content"
+        android:layout_width="169dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="1_Order Complete"
+        android:text="Order Complete"
         android:textColor="@android:color/black"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -164,8 +164,8 @@
 
     <TextView
         android:id="@+id/ordInfo"
-        android:layout_width="274dp"
-        android:layout_height="136dp"
+        android:layout_width="382dp"
+        android:layout_height="186dp"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
