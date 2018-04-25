@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView orderReview11;
     private TextView orderReview12;
 
-    public String str1 = "Coffee: ",str2 = "Caesar Salad: ",str3 = "Tom w Mutz: ",
-            str4 = "Pumpkin Pie: ",str5 = "Royal Burger: ",str6 = "Chicken Wrap: ",str7 = "Bacon Potatoes: ",
-            str8 = "Chocolate Cake: ",str9 = "Grilled Salmon: ",str10 = "Spaghetti: ",str11 = "Pork Chops: ",
-            str12 = "Hot Fudge ";
+    public String str1 = "Coffee",str2 = "Caesar Salad",str3 = "Tom w Mutz",
+            str4 = "Pumpkin Pie",str5 = "Royal Burger",str6 = "Chicken Wrap",str7 = "Bacon Potatoes",
+            str8 = "Chocolate Cake",str9 = "Grilled Salmon",str10 = "Spaghetti",str11 = "Pork Chops",
+            str12 = "Hot Fudge";
 
     //Constants
     public double total_price = 0;
@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
     public int count1, count2, count3, count4, count5,
                 count6, count7, count8, count9, count10,
                 count11, count12;
+
+    private DatabaseReference inventoryRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,8 +111,6 @@ public class MainActivity extends AppCompatActivity {
         orderReview11 =findViewById(R.id.orderReview11);
         orderReview12 =findViewById(R.id.orderReview12);
 
-
-
         //##########################################################################################
         //First Row Pricing
         //##########################################################################################
@@ -121,7 +121,30 @@ public class MainActivity extends AppCompatActivity {
                DecimalFormat df = new DecimalFormat("0.00");
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                count1++;
-               orderReview1.setText(str1 + Integer.toString(count1));
+               orderReview1.setText(str1 + ": " + Integer.toString(count1));
+
+                inventoryRef = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/Coffee");
+                inventoryRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        /**String invLevel = (String) dataSnapshot.getValue();
+                        Integer inventLvl = Integer.parseInt(invLevel);
+                        inventLvl--;
+                        invLevel = Integer.toString(inventLvl);
+                        //String inventory = invLevel.toString();
+                        inventoryRef.setValue(invLevel);**/
+
+                        Integer invLevel = (Integer.parseInt(dataSnapshot.getValue().toString()) - 1);
+                        System.out.println("invLevel: " + invLevel);
+                        inventoryRef.setValue(invLevel);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
                //Minus Item
                if(count1 >= 1){
                    orderReview1.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                        public void onClick(View view) {
                            if(count1 > 0) {
                                count1--;
-                               orderReview1.setText(str1 + Integer.toString(count1));
+                               orderReview1.setText(str1 + ": " + Integer.toString(count1));
                                total_price = total_price - price1;
                            }
                            textViewPrice.setText(String.format("$ %s", df.format(total_price)));
@@ -141,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                        }
                    });
                }
+
             }
         });
 
@@ -151,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                DecimalFormat df = new DecimalFormat("0.00");
                textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                count2++;
-               orderReview2.setText(str2 +  Integer.toString(count2));
+               orderReview2.setText(str2 + ": " + Integer.toString(count2));
                 //Minus Item
                 if(count2 >= 1){
                     orderReview2.setOnClickListener(new View.OnClickListener() {
@@ -181,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count3++;
-                orderReview3.setText(str3 + Integer.toString(count3));
+                orderReview3.setText(str3 + ": " + Integer.toString(count3));
                 //Minus Item
                 if(count3 >= 1){
                     orderReview3.setOnClickListener(new View.OnClickListener() {
@@ -211,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count4++;
-                orderReview4.setText(str4 + Integer.toString(count4));
+                orderReview4.setText(str4 + ": " + Integer.toString(count4));
                 //Minus Item
                 if(count4 >= 1){
                     orderReview4.setOnClickListener(new View.OnClickListener() {
@@ -243,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count5++;
-                orderReview5.setText(str5 + Integer.toString(count5));
+                orderReview5.setText(str5 + ": " + Integer.toString(count5));
                 //Minus Item
                 if(count5 >= 1){
                     orderReview5.setOnClickListener(new View.OnClickListener() {
@@ -273,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count6++;
-                orderReview6.setText(str6 + Integer.toString(count6));
+                orderReview6.setText(str6 + ": " + Integer.toString(count6));
                 //Minus Item
                 if(count6 >= 1){
                     orderReview6.setOnClickListener(new View.OnClickListener() {
@@ -303,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count7++;
-                orderReview7.setText(str7 + Integer.toString(count7));
+                orderReview7.setText(str7 + ": " + Integer.toString(count7));
                 //Minus Item
                 if(count7 >= 1){
                     orderReview7.setOnClickListener(new View.OnClickListener() {
@@ -333,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count8++;
-                orderReview8.setText(str8 + Integer.toString(count8));
+                orderReview8.setText(str8 + ": " + Integer.toString(count8));
                 //Minus Item
                 if(count8 >= 1){
                     orderReview8.setOnClickListener(new View.OnClickListener() {
@@ -365,7 +389,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count9++;
-                orderReview9.setText(str9 + Integer.toString(count9));
+                orderReview9.setText(str9 + ": " + Integer.toString(count9));
                 //Minus Item
                 if(count9 >= 1){
                     orderReview9.setOnClickListener(new View.OnClickListener() {
@@ -395,7 +419,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count10++;
-                orderReview10.setText(str10 + Integer.toString(count10));
+                orderReview10.setText(str10 + ": " + Integer.toString(count10));
                 //Minus Item
                 if(count10 >= 1){
                     orderReview10.setOnClickListener(new View.OnClickListener() {
@@ -425,7 +449,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count11++;
-                orderReview11.setText(str11 + Integer.toString(count11));
+                orderReview11.setText(str11 + ": " + Integer.toString(count11));
                 //Minus Item
                 if(count11 >= 1){
                     orderReview11.setOnClickListener(new View.OnClickListener() {
@@ -455,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat df = new DecimalFormat("0.00");
                 textViewPrice.setText(String.format("$ %s", df.format(total_price)));
                 count12++;
-                orderReview12.setText(str12 + Integer.toString(count12));
+                orderReview12.setText(str12 + ": " + Integer.toString(count12));
                 //Minus Item
                 if(count12 >= 1){
                     orderReview12.setOnClickListener(new View.OnClickListener() {
