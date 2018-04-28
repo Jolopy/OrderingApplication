@@ -8,11 +8,10 @@
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="306dp"
+        android:layout_height="577dp"
         android:layout_marginTop="30dp"
-        android:columnCount="5"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:columnCount="3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 01"
+            android:text="@string/order_01"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="24dp"
@@ -34,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 02"
+            android:text="@string/order_02"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             android:textStyle="normal"
@@ -47,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 03"
+            android:text="@string/order_03"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="24dp"
@@ -59,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="order 04"
+            android:text="@string/order_04"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="199dp"
@@ -71,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 05"
+            android:text="@string/order_05"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="24dp"
@@ -83,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 06"
+            android:text="@string/order_06"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="199dp"
@@ -95,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 07"
+            android:text="@string/order_07"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="24dp"
@@ -107,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 08"
+            android:text="@string/order_08"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="201dp"
@@ -119,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 09"
+            android:text="@string/order_09"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="28dp"
@@ -131,18 +130,39 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Order 10"
+            android:text="@string/order_10"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="199dp"
             tools:layout_editor_absoluteY="365dp" />
+
+        <Button
+            android:id="@+id/ord11btn"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="@string/order_11"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/ord12btn"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="@string/order_12"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
     </GridLayout>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select to View Order"
+        android:text="@string/select_to_view_order_from_queue"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -152,25 +172,32 @@
 
     <Button
         android:id="@+id/orderComplete"
-        android:layout_width="169dp"
-        android:layout_height="wrap_content"
+        android:layout_width="161dp"
+        android:layout_height="84dp"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="Order Complete"
+        android:text="@string/order_complete"
         android:textColor="@android:color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/ordInfo"
-        android:layout_width="382dp"
-        android:layout_height="186dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/orderComplete"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/orderViewItems"
+        android:layout_width="190dp"
+        android:layout_height="694dp"
+        android:addStatesFromChildren="false"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/orderViewCount"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/orderViewCount"
+        android:layout_width="160dp"
+        android:layout_height="694dp"
+        android:addStatesFromChildren="false"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

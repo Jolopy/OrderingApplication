@@ -51,6 +51,20 @@
     <string name="Hostess">Hostess</string>
     <string name="Busboy">Busboy</string>
     <string name="title_activity_manager">ManagerActivity</string>
+    <string name="order_01">Order 01</string>
+    <string name="order_02">Order 02</string>
+    <string name="order_06">Order 06</string>
+    <string name="order_03">Order 03</string>
+    <string name="order_04">order 04</string>
+    <string name="order_05">Order 05</string>
+    <string name="order_complete">Order Complete</string>
+    <string name="select_to_view_order_from_queue">Select to View Order From Queue</string>
+    <string name="order_11">Order 11</string>
+    <string name="order_12">Order 12</string>
+    <string name="order_10">Order 10</string>
+    <string name="order_09">Order 09</string>
+    <string name="order_08">Order 08</string>
+    <string name="order_07">Order 07</string>
 
     // Customer Home Screen
 

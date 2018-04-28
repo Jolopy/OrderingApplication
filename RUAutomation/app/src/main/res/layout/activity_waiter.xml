@@ -144,6 +144,7 @@
         android:layout_marginEnd="200dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:addStatesFromChildren="false"
         android:background="@android:color/darker_gray"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
