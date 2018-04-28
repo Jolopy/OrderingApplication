@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cczec.ruautomation.R;
 import com.google.firebase.database.DatabaseReference;
@@ -65,6 +66,8 @@ public class PaymentDetails extends AppCompatActivity {
             detailID.setText(response.getString("id"));
             detailStatus.setText(response.getString("state"));
             detailAmount.setText("$" + paymentAmount);
+            payRef.child(response.getString("id")).setValue("Payment_Successful");
+            Toast.makeText(getApplicationContext(), "Payment Successful, please press back button when down", Toast.LENGTH_LONG).show();
 
         } catch (JSONException e) {
             e.printStackTrace();
