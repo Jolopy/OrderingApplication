@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView orderReview11;
     private TextView orderReview12;
 
-    public String str1 = "Coffee",str2 = "Caesar Salad",str3 = "Tom w Mutz",
+    public String str1 = "Coffee",str2 = "Caesar Salad",str3 = "Tomato Mutz",
             str4 = "Pumpkin Pie",str5 = "Royal Burger",str6 = "Chicken Wrap",str7 = "Bacon Potatoes",
             str8 = "Chocolate Cake",str9 = "Grilled Salmon",str10 = "Spaghetti",str11 = "Pork Chops",
             str12 = "Hot Fudge";
@@ -66,7 +66,20 @@ public class MainActivity extends AppCompatActivity {
                 count6, count7, count8, count9, count10,
                 count11, count12;
 
-    private DatabaseReference inventoryRef;
+    private DatabaseReference inventoryRef1;
+    private DatabaseReference inventoryRef2;
+    private DatabaseReference inventoryRef3;
+    private DatabaseReference inventoryRef4;
+    private DatabaseReference inventoryRef5;
+    private DatabaseReference inventoryRef6;
+    private DatabaseReference inventoryRef7;
+    private DatabaseReference inventoryRef8;
+    private DatabaseReference inventoryRef9;
+    private DatabaseReference inventoryRef10;
+    private DatabaseReference inventoryRef11;
+    private DatabaseReference inventoryRef12;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,17 +136,10 @@ public class MainActivity extends AppCompatActivity {
                count1++;
                orderReview1.setText(str1 + ": " + Integer.toString(count1));
 
-                inventoryRef = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/Coffee");
+                /**inventoryRef = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str1);
                 inventoryRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        /**String invLevel = (String) dataSnapshot.getValue();
-                        Integer inventLvl = Integer.parseInt(invLevel);
-                        inventLvl--;
-                        invLevel = Integer.toString(inventLvl);
-                        //String inventory = invLevel.toString();
-                        inventoryRef.setValue(invLevel);**/
-
                         Integer invLevel = (Integer.parseInt(dataSnapshot.getValue().toString()) - 1);
                         System.out.println("invLevel: " + invLevel);
                         inventoryRef.setValue(invLevel);
@@ -143,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {
 
                     }
-                });
+                });**/
 
                //Minus Item
                if(count1 >= 1){
@@ -543,41 +549,223 @@ public class MainActivity extends AppCompatActivity {
                 orderNumberRef.child(Integer.toString(order_number)).child("Date").setValue(getDate());
                 orderNumberRef.child(Integer.toString(order_number)).child("Time").setValue(getTime());
                 orderNumberRef.child(Integer.toString(order_number)).child("OrderNumber").setValue(order_number);
+
                 if (count1 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str1).setValue(count1);
+
+                    inventoryRef1 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str1);
+                    inventoryRef1.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel1 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count1);
+                            System.out.println("coffee: " + invLevel1);
+                            inventoryRef1.setValue(invLevel1);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
                 }
                 if (count2 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str2).setValue(count2);
+
+                    inventoryRef2 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str2);
+                    inventoryRef2.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel2 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count2);
+                            System.out.println("caesar salad: " + invLevel2);
+                            inventoryRef2.setValue(invLevel2);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count3 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str3).setValue(count3);
+
+                    inventoryRef3 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str3);
+                    inventoryRef3.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel3 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count3);
+                            System.out.println("tom mutz: " + invLevel3);
+                            inventoryRef3.setValue(invLevel3);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count4 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str4).setValue(count4);
+
+                    inventoryRef4 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str4);
+                    inventoryRef4.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel4 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count4);
+                            System.out.println("pump pie: " + invLevel4);
+                            inventoryRef4.setValue(invLevel4);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count5 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str5).setValue(count5);
+
+                    inventoryRef5 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str5);
+                    inventoryRef5.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel5 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count5);
+                            System.out.println("roy burg: " + invLevel5);
+                            inventoryRef5.setValue(invLevel5);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count6 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str6).setValue(count6);
+
+                    inventoryRef6 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str6);
+                    inventoryRef6.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel6 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count6);
+                            System.out.println("chix wrap: " + invLevel6);
+                            inventoryRef6.setValue(invLevel6);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count7 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str7).setValue(count7);
+
+                    inventoryRef7 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str7);
+                    inventoryRef7.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel7 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count7);
+                            System.out.println("bac pot: " + invLevel7);
+                            inventoryRef7.setValue(invLevel7);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count8 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str8).setValue(count8);
+
+                    inventoryRef8 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str8);
+                    inventoryRef8.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel8 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count8);
+                            System.out.println("choc cake: " + invLevel8);
+                            inventoryRef8.setValue(invLevel8);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count9 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str9).setValue(count9);
+
+                    inventoryRef9 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str9);
+                    inventoryRef9.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel9 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count9);
+                            System.out.println("gril salmon: " + invLevel9);
+                            inventoryRef9.setValue(invLevel9);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count10 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str10).setValue(count10);
+
+                    inventoryRef10 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str10);
+                    inventoryRef10.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel10 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count10);
+                            System.out.println("spag: " + invLevel10);
+                            inventoryRef10.setValue(invLevel10);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count11 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str11).setValue(count11);
+
+                    inventoryRef11 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str11);
+                    inventoryRef11.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel11 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count11);
+                            System.out.println("pork chop: " + invLevel11);
+                            inventoryRef11.setValue(invLevel11);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 if (count12 >= 1){
                     orderNumberRef.child(Integer.toString(order_number)).child(str12).setValue(count12);
+
+                    inventoryRef12 = FirebaseDatabase.getInstance().getReference().child("Inventory/Current Level/" + str12);
+                    inventoryRef12.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Integer invLevel12 = (Integer.parseInt(dataSnapshot.getValue().toString()) - count12);
+                            System.out.println("hot fudge: " + invLevel12);
+                            inventoryRef12.setValue(invLevel12);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 payRef.child(tableNumber.getText().toString()).setValue("Ordered");
 
