@@ -186,7 +186,7 @@
 
     <ListView
         android:id="@+id/orderViewItems"
-        android:layout_width="160dp"
+        android:layout_width="200dp"
         android:layout_height="694dp"
         android:addStatesFromChildren="false"
         android:scrollbars="vertical"
@@ -195,7 +195,7 @@
 
     <ListView
         android:id="@+id/orderViewCount"
-        android:layout_width=" "
+        android:layout_width="200dp"
         android:layout_height="694dp"
         android:addStatesFromChildren="false"
         android:scrollbars="vertical"
