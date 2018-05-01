@@ -153,8 +153,6 @@ public class ManagerActivity extends AppCompatActivity {
                     }
                 });
 
-                //lowInvName.clear();
-                //lowInvCount.clear();
                 reload();
             }
         });
@@ -180,8 +178,6 @@ public class ManagerActivity extends AppCompatActivity {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     currentName.add(ds.getKey().toString());
                     currentCount.add(ds.getValue().toString());
-                    System.out.println("currentName: " + ds.getKey().toString());
-                    System.out.println("currentCount: " + ds.getValue().toString());
                 }
 
                 thresholdRef.addValueEventListener(new ValueEventListener() {
@@ -190,19 +186,12 @@ public class ManagerActivity extends AppCompatActivity {
                         for(DataSnapshot ds1 : dataSnapshot.getChildren()) {
                             threshName.add(ds1.getKey().toString());
                             threshCount.add(ds1.getValue().toString());
-                            System.out.println("threshName: " + ds1.getKey().toString());
-                            System.out.println("threshCount: " + ds1.getValue().toString());
                         }
 
                         for(int i = 0; i < currentName.size(); i++) {
-                            System.out.println("CURRENT NAME: " + currentName.get(i));
                             if(Integer.parseInt(currentCount.get(i)) <= Integer.parseInt(threshCount.get(i))) {
                                 lowInvName.add(currentName.get(i));
                                 lowInvCount.add(currentCount.get(i));
-
-
-                                //alertThreshold.setText(currentName.get(i) + " is running low.");
-                                System.out.println("LOW");
                             }
                         }
 
@@ -223,41 +212,6 @@ public class ManagerActivity extends AppCompatActivity {
 
             }
         });
-
-
-        /**thresholdRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    threshName.add(ds.getKey().toString());
-                    threshCount.add(ds.getValue().toString());
-                    System.out.println("threshName: " + ds.getKey().toString());
-                    System.out.println("threshCount: " + ds.getValue().toString());
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });**/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         refThresholdLevel = FirebaseDatabase.getInstance().getReference().child(threshold_level);
