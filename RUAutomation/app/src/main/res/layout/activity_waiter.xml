@@ -87,7 +87,7 @@
 
     <EditText
         android:id="@+id/notification"
-        android:layout_width="wrap_content"
+        android:layout_width="169dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -122,7 +122,7 @@
     <ListView
         android:id="@+id/tableListView"
         android:layout_width="163dp"
-        android:layout_height="350dp"
+        android:layout_height="257dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="200dp"
@@ -139,7 +139,7 @@
     <ListView
         android:id="@+id/orderListView"
         android:layout_width="165dp"
-        android:layout_height="350dp"
+        android:layout_height="255dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="200dp"
         android:layout_marginStart="8dp"
