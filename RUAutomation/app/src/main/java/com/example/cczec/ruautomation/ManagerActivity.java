@@ -1,9 +1,13 @@
 package com.example.cczec.ruautomation;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class ManagerActivity extends AppCompatActivity {
 
     // FirebaseDatabase declerations
@@ -20,6 +26,22 @@ public class ManagerActivity extends AppCompatActivity {
     private DatabaseReference refThresholdLevel;
 
     private DataSnapshot snapCurrentLevel;
+
+    public DatabaseReference currentLevelRef;
+    public DatabaseReference thresholdRef;
+    public ArrayList<String> currentName = new ArrayList<String>();
+    public ArrayList<String> currentCount = new ArrayList<String>();
+    public ArrayList<String> threshName = new ArrayList<String>();
+    public ArrayList<String> threshCount = new ArrayList<String>();
+    public ArrayList<String> lowInvName = new ArrayList<String>();
+    public ArrayList<String> lowInvCount = new ArrayList<String>();
+    public ArrayAdapter<String> itemsAdapter;
+    public ArrayAdapter<String> countAdapter;
+    Context context = this;
+    public ListView invNameView;
+    public ListView invCountView;
+    public ArrayAdapter<String> invNameAdapter;
+    public ArrayAdapter<String> invCountAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +75,11 @@ public class ManagerActivity extends AppCompatActivity {
                 String strThresholdItemAmount = thresholdItemAmount.getText().toString();
                 //int intThresholdItemAmount = Integer.parseInt(thresholdItemAmount.getText().toString());
                 refThresholdLevel =  FirebaseDatabase.getInstance().getReference().child(threshold_level + "/" + strSetThresholdItem);
-                refThresholdLevel.setValue(strThresholdItemAmount);
+                refThresholdLevel.setValue(Integer.parseInt(strThresholdItemAmount));
 
                 Toast.makeText(getApplicationContext(), "Threshold Set!", Toast.LENGTH_SHORT).show();
+
+                reload();
             }
         });
 
@@ -128,12 +152,113 @@ public class ManagerActivity extends AppCompatActivity {
 
                     }
                 });
+
+                //lowInvName.clear();
+                //lowInvCount.clear();
+                reload();
             }
         });
         /*
         alertThreshold          - need another field that will be an EventListener to when the stock supply drops below a certain level*/
 
-        final TextView alertThreshold = findViewById(R.id.alertThreshold);
+        //final TextView alertThreshold = findViewById(R.id.alertThreshold); COMMENTED OUT BECAUSE I DELETED ORIGINAL ALERT TEXT FIELD
+
+        invNameView = findViewById(R.id.invNameView);
+        invCountView = findViewById(R.id.invCountView);
+        itemsAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, lowInvName);
+        countAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, lowInvCount);
+        invNameView.setAdapter(itemsAdapter);
+        invCountView.setAdapter(countAdapter);
+
+        currentLevelRef = FirebaseDatabase.getInstance().getReference().child(current_level);
+        thresholdRef = FirebaseDatabase.getInstance().getReference().child(threshold_level);
+        currentLevelRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                lowInvName.clear();
+                lowInvCount.clear();
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    currentName.add(ds.getKey().toString());
+                    currentCount.add(ds.getValue().toString());
+                    System.out.println("currentName: " + ds.getKey().toString());
+                    System.out.println("currentCount: " + ds.getValue().toString());
+                }
+
+                thresholdRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for(DataSnapshot ds1 : dataSnapshot.getChildren()) {
+                            threshName.add(ds1.getKey().toString());
+                            threshCount.add(ds1.getValue().toString());
+                            System.out.println("threshName: " + ds1.getKey().toString());
+                            System.out.println("threshCount: " + ds1.getValue().toString());
+                        }
+
+                        for(int i = 0; i < currentName.size(); i++) {
+                            System.out.println("CURRENT NAME: " + currentName.get(i));
+                            if(Integer.parseInt(currentCount.get(i)) <= Integer.parseInt(threshCount.get(i))) {
+                                lowInvName.add(currentName.get(i));
+                                lowInvCount.add(currentCount.get(i));
+
+
+                                //alertThreshold.setText(currentName.get(i) + " is running low.");
+                                System.out.println("LOW");
+                            }
+                        }
+
+                        itemsAdapter.notifyDataSetChanged();
+                        countAdapter.notifyDataSetChanged();
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        /**thresholdRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    threshName.add(ds.getKey().toString());
+                    threshCount.add(ds.getValue().toString());
+                    System.out.println("threshName: " + ds.getKey().toString());
+                    System.out.println("threshCount: " + ds.getValue().toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         refThresholdLevel = FirebaseDatabase.getInstance().getReference().child(threshold_level);
         refCurrentLevel =  FirebaseDatabase.getInstance().getReference().child(current_level);
@@ -157,7 +282,7 @@ public class ManagerActivity extends AppCompatActivity {
                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                     for (final DataSnapshot dataThresh : dataSnapshot.getChildren()){
                                         if (dataCurrent.toString() == dataThresh.toString() && Integer.parseInt(dataCurrent.getValue().toString()) < Integer.parseInt(dataThresh.getValue().toString())){
-                                            alertThreshold.setText(dataCurrent.getKey() + " is running low");
+                                            //alertThreshold.setText(dataCurrent.getKey() + " is running low"); COMMENTED OUT BECAUSE I DELETED ORIGINAL ALERT TEXT FIELD
                                         }
                                     }
                                 }
@@ -188,6 +313,15 @@ public class ManagerActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void reload() {
+        Intent intent = getIntent();
+        overridePendingTransition(0,0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        overridePendingTransition(0,0);
+        startActivity(intent);
     }
 
 }

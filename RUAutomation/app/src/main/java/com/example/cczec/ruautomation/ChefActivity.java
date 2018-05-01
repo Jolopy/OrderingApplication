@@ -182,6 +182,7 @@ public class ChefActivity extends AppCompatActivity {
         orderViewItems.setAdapter(itemsAdapter);
         orderViewCount.setAdapter(countAdapter);
         ordNos = new ArrayList<>();
+
         mDatabaseOrdNo.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

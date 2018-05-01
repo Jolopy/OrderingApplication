@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    tools:layout_editor_absoluteX="10dp"
+    tools:layout_editor_absoluteY="10dp">
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="306dp"
-        android:layout_height="577dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginTop="30dp"
         android:columnCount="3"
         app:layout_constraintStart_toStartOf="parent"
@@ -172,8 +174,8 @@
 
     <Button
         android:id="@+id/orderComplete"
-        android:layout_width="161dp"
-        android:layout_height="84dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:backgroundTint="@android:color/holo_green_light"
         android:text="@string/order_complete"
         android:textColor="@android:color/black"
@@ -184,7 +186,7 @@
 
     <ListView
         android:id="@+id/orderViewItems"
-        android:layout_width="190dp"
+        android:layout_width="160dp"
         android:layout_height="694dp"
         android:addStatesFromChildren="false"
         android:scrollbars="vertical"
@@ -193,7 +195,7 @@
 
     <ListView
         android:id="@+id/orderViewCount"
-        android:layout_width="160dp"
+        android:layout_width=" "
         android:layout_height="694dp"
         android:addStatesFromChildren="false"
         android:scrollbars="vertical"
